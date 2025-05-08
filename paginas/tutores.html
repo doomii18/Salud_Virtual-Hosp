@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+<body>
+    <header>
+        <!-- Botón toggle para mostrar/ocultar el menú -->
+        <input type="checkbox" id="menu-toggle" hidden />
+        <label for="menu-toggle" class="toggle-button">☰</label>
+      
+        <!-- Menú de navegación lateral -->
+        <nav class="menu-container">
+          <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="logo" />
+          <a href="../index.html"><button class="menu-button">Inicio</button></a> 
+          <a href="../paginas/servicios.html"><button class="menu-button">Servicios</button></a> 
+          <a href="../paginas/pacientes.html"><button class="menu-button">Pacientes</button></a> 
+          <a href="../paginas/tutores.html"><button class="menu-button">Tutores</button></a> 
+          <a href="../paginas/historialmedico.html"><button class="menu-button">Historial Médico</button></a>
+    
+          <a href="../paginas/registrotutor.html"><button class="menu-button">Registrar Tutor</button></a> 
+          <a href="../paginas/registrarpacientes.html"><button class="menu-button">Registrar Paciente</button></a> 
+          <a href="../paginas/agendarcitas.html"><button class="menu-button">Agendar Cita Médica</button></a> 
+          <a href="../paginas/agregarhistorial.html"><button class="menu-button">Agregar Historial Médico</button></a> 
+          <a href="../paginas/Dasboard.html"><button class="menu-button">Dashboard</button></a>
+        </nav>
+      </header>
+      
+      
+    <main>
+
+      
+        <div id="tutores" class="content">
+            <h1 class="tutoresregistrados">
+                <img src="../IMG/sesion.png" alt="icono registrados" class="icono-Tutoresgistrados">Tutores Registrados</h1>
+            <table id="tablaTutores" class="tabla-tutores">
+                <thead>
+                    <tr>
+                        <th>Cédula Tutor</th>
+                        <th>Primer Nombre Tutor</th>
+                        <th>Segundo Nombre Tutor</th>
+                        <th>Apellidos del Tutor</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Dirección Hogar</th>
+                        <th>Ocupacion del Tutor</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                    <tr>
+                        <td>976-263547-8225I</td>
+                        <td>Jonas</td>
+                        <td>Conner</td>
+                        <td>Mannix Heath</td>
+                        <td>Masculino</td>
+                        <td>27</td>
+                        <td>5253-8516</td>
+                        <td>juan.perez@example.com</td>
+                        <td>Rept. La quebrada 200 varas oeste.</td>
+                        <td>Abogado</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>364-535161-6937U</td>
+                        <td>Imelda</td>
+                        <td>Green</td>
+                        <td>Victoria Walter</td>
+                        <td>Femenino</td>
+                        <td>31</td>
+                        <td>5964-1674</td>
+                        <td>walterimel@example.com</td>
+                        <td>Rpt. Villa Verde, casa N. 16.</td>
+                        <td>Fotografa</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>126-869774-4463X</td>
+                        <td>Cameron</td>
+                        <td>Watson</td>
+                        <td>Iliana Jackson</td>
+                        <td>Masculino</td>
+                        <td>28</td>
+                        <td>9299-1826</td>
+                        <td>cameron@example.com</td>
+                        <td>Masatepe, Centro de salud 3 cuadras al sur</td>
+                        <td>Contador</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>811-769493-2872D</td>
+                        <td>Finn</td>
+                        <td>Evans</td>
+                        <td>Phoebe Carr</td>
+                        <td>Masculino</td>
+                        <td>29</td>
+                        <td>6295-1376</td>
+                        <td>phoebe@example.com</td>
+                        <td>Km. 46 carretera hacia Granada.</td>
+                        <td>Cocinero</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>882-365848-1547D</td>
+                        <td>Jaden</td>
+                        <td>Everett</td>
+                        <td>Vivien Walter</td>
+                        <td>Femenino</td>
+                        <td>29</td>
+                        <td>5736-2442</td>
+                        <td>everett@example.com</td>
+                        <td>Los almendros, carretera Masaya, casa N. 13</td>
+                        <td>Analista de datos</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>978-783662-8649V</td>
+                        <td>Lareina</td>
+                        <td>Moon</td>
+                        <td>Peter Pena</td>
+                        <td>Femenino</td>
+                        <td>25</td>
+                        <td>3344-8226</td>
+                        <td>moon@example.com</td>
+                        <td>Las colinas, gasolinera 1, 150 mts al Sur</td>
+                        <td>Gerente de proyectos</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>494-296529-1755R</td>
+                        <td>Reagan</td>
+                        <td>Pearson</td>
+                        <td>Chancellor Hensley</td>
+                        <td>Femenino</td>
+                        <td>25</td>
+                        <td>1758-3689</td>
+                        <td>hensley@example.com</td>
+                        <td>Km 15, carretera Masaya, port n negro.</td>
+                        <td>Editora</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>915-824396-8836B</td>
+                        <td>Lawrence</td>
+                        <td>Bennett</td>
+                        <td>Sophia Mcleod</td>
+                        <td>Femenino</td>
+                        <td>25</td>
+                        <td>7279-1634</td>
+                        <td>bennett@example.com</td>
+                        <td>Barrio el Recreo, primera calle.</td>
+                        <td>Estilista de moda</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>447-524752-6624P</td>
+                        <td>Dorian</td>
+                        <td>Hubbard</td>
+                        <td>Alice Workman</td>
+                        <td>Masculino</td>
+                        <td>29</td>
+                        <td>7874-2587</td>
+                        <td>hubbard@example.com</td>
+                        <td>Las colinas, gasolinera 1, 150 mts al Sur</td>
+                        <td>Gestor de eventos</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>845-783134-4385G</td>
+                        <td>Sybil</td>
+                        <td>May</td>
+                        <td>Serina Mosley</td>
+                        <td>Masculino</td>
+                        <td>30</td>
+                        <td>9462-3659</td>
+                        <td>mosley@example.com</td>
+                        <td>Iglesia San Miguel, Masaya, 2 cuadras al Sur.</td>
+                        <td>Carpintero</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+
+                    </tr>
+                    <tr>
+                        <td>321-656979-9828B</td>
+                        <td>Fay</td>
+                        <td>Mercer</td>
+                        <td>Shelby Pearson</td>
+                        <td>Femenino</td>
+                        <td>22</td>
+                        <td>5778-5224</td>
+                        <td>shelby@example.com</td>
+                        <td>Rept. Jos  Benito, Masatepe, 3c al norte</td>
+                        <td>Recepcionista</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+
+                    </tr>
+                    <tr>
+                        <td>287-665142-6754E</td>
+                        <td>Reagan</td>
+                        <td>Jarvis</td>
+                        <td>Brandon Hatfield</td>
+                        <td>Masculino</td>
+                        <td>30</td>
+                        <td>6516-8293</td>
+                        <td>hatfield@<wbr>example.com</td>
+                        <td>Masatepe, Centro de salud 3 cuadras al sur</td>
+                        <td>Investigador cientifico</td>
+                        <td><button class="btn-edit" type="button">Editar</button></td>
+                        <td><button class="btn-delete" type="button">Eliminar</button></td>
+
+
+                    </tr>
+                    
+
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán las filas con JavaScript -->
+                    <tr class="empty-row"><td colspan="10"></td></tr>
+                    <tr class="empty-row"><td colspan="11"></td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    
+   
+    <footer class="footer-contacto">
+        <div class="footer-row">
+            <div class="footer-section">
+                <h3>Contactos del Hospital Pediátrico</h3>
+                <p>| <strong>Teléfono</strong>: +505 2426 4890</p>
+                <p>| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+                <p>| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+            </div>
+            <div class="footer-section logo-section">
+                <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="logo" />
+            </div>
+        </div>
+        <div class="divider"></div> <!-- Línea divisoria -->
+        <div class="footer-section social-media">
+            <p>
+                <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="social-icon"></a>
+                <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="social-icon"></a>
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+      <script src="../JS/scripts.js"></script>
+
+</body>
+
+</html>

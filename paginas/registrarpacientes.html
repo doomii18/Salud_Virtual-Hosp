@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salud Virtual</title>
+  <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+
+
+<body>
+  <header>
+    <!-- Botón toggle para mostrar/ocultar el menú -->
+    <input type="checkbox" id="menu-toggle" hidden />
+    <label for="menu-toggle" class="toggle-button">☰</label>
+  
+    <!-- Menú de navegación lateral -->
+    <nav class="menu-container">
+      <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="logo" />
+      <a href="../index.html"><button class="menu-button">Inicio</button></a> 
+      <a href="../paginas/servicios.html"><button class="menu-button">Servicios</button></a> 
+      <a href="../paginas/pacientes.html"><button class="menu-button">Pacientes</button></a> 
+      <a href="../paginas/tutores.html"><button class="menu-button">Tutores</button></a> 
+      <a href="../paginas/historialmedico.html"><button class="menu-button">Historial Médico</button></a>
+
+      <a href="../paginas/registrotutor.html"><button class="menu-button">Registrar Tutor</button></a> 
+      <a href="../paginas/registrarpacientes.html"><button class="menu-button">Registrar Paciente</button></a> 
+      <a href="../paginas/agendarcitas.html"><button class="menu-button">Agendar Cita Médica</button></a> 
+      <a href="../paginas/agregarhistorial.html"><button class="menu-button">Agregar Historial Médico</button></a> 
+      <a href="../paginas/Dasboard.html"><button class="menu-button">Dashboard</button></a>
+    </nav>
+  </header>
+  
+
+
+    <main>
+        <!-- REGISTRAR PACIENTE -->
+       <div id="registrarp" class="content" style="display: block;">
+         <h1 class="registrarp">
+          <img src="../IMG/pediatric.png" alt="icono de paciente" class="icono-paciente">Registrar Paciente</h1>
+         <form id="pacienteForm">
+           <div class="form-grid">
+             <div class="form-column">
+               <label for="codigoPaciente">Código Paciente</label>
+               <input type="text" id="codigoPaciente" name="codigoPaciente" readonly>
+       
+               <label for="1nombre-paciente">Primer Nombre del Paciente</label>
+               <input type="text" id="1nombre-paciente" name="1nombre-paciente" placeholder="Primer Nombre del Paciente" required>
+       
+               <label for="2nombre-paciente">Segundo Nombre del Paciente</label>
+               <input type="text" id="2nombre-paciente" name="2nombre-paciente"  placeholder="Segundo Nombre del Paciente" >
+       
+               <label for="apellidos-paciente">Apellidos</label>
+               <input type="text" id="apellidos-paciente" name="apellidos-paciente"  placeholder="Apellidos del Paciente"required>
+             </div>
+       
+             <div class="form-column">
+               <label for="fecha">Fecha de Nacimiento</label>
+               <input type="date" id="fecha" name="fecha" placeholder="Fecha de Nacimiento del Paciente" required>
+       
+               <label for="edad">Edad</label>
+               <input type="text" id="edad" name="edad" required>
+             
+               <label for="sexo">Sexo</label>
+               <select id="sexo" name="sexo" required>
+                 <option value="masculino">Masculino</option>
+                 <option value="femenino">Femenino</option>
+               </select>
+
+               
+       
+               <label for="alergias">Alergias</label>
+               <input type="text" id="alergias" name="alergias" placeholder="Si el paciente no tiene alergias, dejar vacio">
+             
+              </div>
+           </div>
+       
+           <div class="form-button">
+             <button type="submit">Registrar Paciente</button>
+           </div>
+         </form>
+       </div>
+      
+      </main>
+      <footer class="footer-contacto">
+        <div class="footer-row">
+            <div class="footer-section">
+                <h3>Contactos del Hospital Pediátrico</h3>
+                <p>| <strong>Teléfono</strong>: +505 2426 4890</p>
+                <p>| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+                <p>| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+            </div>
+            <div class="footer-section logo-section">
+                <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="logo" />
+            </div>
+        </div>
+        <div class="divider"></div> <!-- Línea divisoria -->
+        <div class="footer-section social-media">
+            <p>
+                <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="social-icon"></a>
+                <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="social-icon"></a>
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+      <script src="../JS/scripts.js"></script>
+    </body>
+</html>
