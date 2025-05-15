@@ -6,12 +6,11 @@ body {
   padding: 0;
   background-color: #f0f8ff;
 }
-
-/* BOTON TIPO HAMBURGUESA */
-.toggle-button {
+/* === BOTÓN HAMBURGUESA === */
+.header__toggle-button {
   position: fixed;
   top: 15px;
-  left: 5px; /* posición por defecto (cerrado) */
+  left: 5px;
   font-size: 24px;
   cursor: pointer;
   z-index: 1001;
@@ -22,17 +21,17 @@ body {
   transition: left 0.3s ease;
 }
 
-/* Ocultar checkbox */
-#menu-toggle {
+/* Checkbox oculto */
+.header__checkbox {
   display: none;
 }
 
-/* Menú lateral oculto por defecto */
-.menu-container {
+/* === MENÚ LATERAL === */
+.header__menu {
   display: flex;
   flex-direction: column;
   position: fixed;
-  left: -300px; /* Oculto */
+  left: -300px;
   top: 0;
   height: 100%;
   width: 190px;
@@ -43,30 +42,18 @@ body {
   z-index: 1000;
 }
 
-/* Cuando el menú está abierto */
-#menu-toggle:checked ~ .menu-container {
+/* Mostrar menú al activar checkbox */
+.header__checkbox:checked ~ .header__menu {
   left: 0;
 }
 
-/*Mover el botón cuando el menú está abierto */
-#menu-toggle:checked ~ .toggle-button {
-  left: 210px; /* Ancho del menú (200px) + 15px de margen */
+/* Mover botón toggle con el menú abierto */
+.header__checkbox:checked ~ .header__toggle-button {
+  left: 210px;
 }
 
-/* Botones */
-button {
-  color: rgb(16, 66, 41);
-  font-weight: bolder;
-  border: none;
-  font-size: 11px;
-  text-align: center;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.menu-button {
+/* === BOTONES DE NAVEGACIÓN === */
+.header__button {
   font-size: 14px;
   color: rgb(32, 43, 39);
   font-weight: bold;
@@ -74,53 +61,25 @@ button {
   background: transparent;
   text-align: left;
   width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.menu-button:hover {
+.header__button:hover {
   background-color: #c1c1c1;
   color: #104b49;
 }
 
-
-
-/* Logo */
-.logo-container {
-  display: flex;
-  align-items: center; 
-  justify-content: space-between;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-color: #ffffff; 
-  padding: 20px; 
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s; 
-}
-
-
-/*logo del contenedor de bienvendida *(inicio)*/
-.logo {
+/* === LOGO === */
+.header__logo {
   width: 80px;
   height: 80px;
-  text-align: Left;
-  margin: 0; 
+  text-align: left;
+  margin: 0;
   border-radius: 80%;
   border: 3px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/*imagen del inicio*/
-.logo-img {
-  max-width: 550px; 
-  height: auto; 
-  border-radius: 7%;
-  border: 1px solid  #097051;
-}
-
-
-/* Logo de inicio */
-.logo-section {
-  text-align: center; /* Centrar el logo */
 }
 
 /*CULMINACION DEL MENÚ*/
@@ -131,6 +90,77 @@ button {
 
 
 /*PANTALLA DE INICIO*/
+
+.inicio {
+  padding: 20px;
+}
+
+.inicio__contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inicio__texto {
+  max-width: 60%;
+}
+
+.inicio__titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.inicio__descripcion {
+  font-size: 16px;
+  color: #333;
+}
+
+.inicio__imagen {
+  max-width: 550px;
+  height: auto;
+  border-radius: 7%;
+  border: 1px solid #097051;
+}
+
+/* === RESPONSIVE PARA TABLETS Y CELULARES === */
+@media (max-width: 768px) {
+  .inicio__contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .inicio__texto {
+    max-width: 100%;
+  }
+
+  .inicio__titulo {
+    font-size: 20px;
+  }
+
+  .inicio__descripcion {
+    font-size: 14px;
+  }
+
+  .inicio__imagen {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio__titulo {
+    font-size: 18px;
+  }
+
+  .inicio__descripcion {
+    font-size: 13px;
+  }
+}
 /* Información de los contenedores de MISION VISION Y VALORES */
 .info-wrapper {
   display: flex; 
