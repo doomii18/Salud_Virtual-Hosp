@@ -228,8 +228,9 @@ const citasChart = new Chart(ctxCitas, {
         }]
     },
     options: {
-        responsive: true,
-        plugins: {
+ responsive: false,
+  maintainAspectRatio: false,
+          plugins: {
             legend: {
                 display: true
             }
@@ -257,8 +258,8 @@ const mayoresChart = new Chart(ctxMayores, {
         }]
     },
     options: {
-        responsive: true,
-        plugins: {
+ responsive: false,
+  maintainAspectRatio: false,        plugins: {
             legend: {
                 display: true
             }
@@ -288,7 +289,8 @@ const menoresChart = new Chart(ctxMenores, {
         }] 
     },
     options: {
-        responsive: true,
+         responsive: false,
+  maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: true
@@ -316,7 +318,8 @@ const ubicacionChart = new Chart(ctxUbicacion, {
         }]
     },
     options: {
-        responsive: true,
+        responsive: false,
+  maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: true
