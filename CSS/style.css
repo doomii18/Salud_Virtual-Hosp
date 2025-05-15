@@ -43,12 +43,12 @@ body {
   z-index: 1000;
 }
 
-/* ✅ Cuando el menú está abierto */
+/* Cuando el menú está abierto */
 #menu-toggle:checked ~ .menu-container {
   left: 0;
 }
 
-/* ✅ Mover el botón cuando el menú está abierto */
+/*Mover el botón cuando el menú está abierto */
 #menu-toggle:checked ~ .toggle-button {
   left: 210px; /* Ancho del menú (200px) + 15px de margen */
 }
@@ -463,8 +463,8 @@ footer {
   flex-direction: column;
   margin: 30px auto;
   padding: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 5PX;
+  margin-right: 5PX;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
