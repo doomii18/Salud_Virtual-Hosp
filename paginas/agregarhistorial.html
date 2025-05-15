@@ -11,26 +11,26 @@
 
 <body>
   
-  <header>
-    <!-- Botón toggle para mostrar/ocultar el menú -->
-    <input type="checkbox" id="menu-toggle" hidden />
-    <label for="menu-toggle" class="toggle-button">☰</label>
-  
-    <!-- Menú de navegación lateral -->
-    <nav class="menu-container">
-      <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="logo" />
-      <a href="../index.html"><button class="menu-button">Inicio</button></a> 
-      <a href="../paginas/pacientes.html"><button class="menu-button">Pacientes</button></a> 
-      <a href="../paginas/tutores.html"><button class="menu-button">Tutores</button></a> 
-      <a href="../paginas/historialmedico.html"><button class="menu-button">Historial Médico</button></a>
+  <header class="header">
+  <!-- Botón toggle para mostrar/ocultar el menú -->
+  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
+  <label for="header__toggle" class="header__toggle-button">☰</label>
 
-      <a href="../paginas/registrotutor.html"><button class="menu-button">Registrar Tutor</button></a> 
-      <a href="../paginas/registrarpacientes.html"><button class="menu-button">Registrar Paciente</button></a> 
-      <a href="../paginas/agendarcitas.html"><button class="menu-button">Agendar Cita Médica</button></a> 
-      <a href="../paginas/agregarhistorial.html"><button class="menu-button">Agregar Historial Médico</button></a> 
-      <a href="../paginas/Dasboard.html"><button class="menu-button">Dashboard</button></a>
-    </nav>
-  </header>
+  <!-- Menú de navegación lateral -->
+  <nav class="header__menu">
+    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+
+    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
+    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
+    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
+    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
+    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
+    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
+    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
+    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
+    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
+  </nav>
+</header>
   
 <main>
 
@@ -68,7 +68,7 @@
         <label for="medida">Medida:</label>
         <input type="text" id="medida" />
     
-        <button type="button" class="btn-guardar" onclick="guardarHistorial()">GUARDAR</button>
+        <button type="button" class="btn-guardar" onclick="guardarHistorial()">Guardar</button>
       </form>
   
 </main>
