@@ -32,61 +32,58 @@
     
 
         <main>
-        <!--Registrar un tutor(Información del tutor)  -->
-    <div id="registrar-tutor" class="content" >
-      <h1 class="registrar-tutor">
-        <img src="../IMG/sesion.png" alt="Ícono de sesión" class="icono-sesion">
-        Registrar Tutor
-      </h1>
-      <form id="SesionForm">
-        <div class="formS-grid">
-          <div class="forms-column">
-            <label for="identificacion">Cédula de Identificación (Tutor)</label>
-            <input type="text" id="identificacion" name="identificacion" placeholder="Ejm: 401-291000-1008H" required maxlength="16">
-    
-            <label for="1nombre-tutor">Primer Nombre del Tutor</label>
-            <input type="text" id="1nombre-tutor" name="1nombre-tutor" placeholder="Primer Nombre del Tutor"required>        
-    
-            <label for="2nombre-tutor">Segundo Nombre del Tutor</label>
-            <input type="text" id="2nombre-tutor" name="2nombre-tutor" placeholder="Segundo Nombre del Tutor">        
-    
-            <label for="apellidos-tutor">Apellidos del Tutor</label>
-            <input type="text" id="apellidos-tutor" name="apellidos-tutor" placeholder="Apellidos del Tutor"required>
-            
-            <label for="sexo">Sexo</label>
-            <select id="sexo" name="sexo" required>
-              <option value="">Seleccionar</option>
-              <option value="Femenino">Femenino</option>
-              <option value="Masculino">Masculino</option>
-            </select>
-          </div>
-    
-          <div class="forms-column">
+       <div class="formulario">
+  <h1 class="formulario__titulo">
+    <img src="../IMG/sesion.png" alt="Ícono de sesión" class="formulario__icono">
+    Registrar Tutor
+  </h1>
+  <form id="form">
+    <div class="formulario__grid">
+      <div class="formulario__columna">
+        <label for="identificacion" class="formulario__label">Cédula de Identificación (Tutor)</label>
+        <input type="text" id="identificacion" name="identificacion" class="formulario__input" placeholder="Ejm: 401-291000-1008H" required maxlength="16">
 
-            <label for="edad">Edad del tutor</label>
-            <input type="edad" id="edad" name="edad" required>
-    
-            <label for="telefono">Teléfono</label>
-            <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
-    
-            <label for="correo">Correo Electrónico</label>
-            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+        <label for="1nombre-tutor" class="formulario__label">Primer Nombre del Tutor</label>
+        <input type="text" id="1nombre-tutor" name="1nombre-tutor" class="formulario__input" placeholder="Primer Nombre del Tutor" required>
 
-            <label for="direccion">Dirección de casa familiar</label>
-            <input type="text" id="direccion" name="direccion" required>
-    
-            <label for="ocupacion">Ocupación del Tutor</label>
-            <input type="text" id="ocupacion" name="ocupacion" required>
-          </div>
-        </div>
-    
-        <div class="button-container">
-          <button type="submit" id="guardar">Guardar registro</button>
-        </div>
+        <label for="2nombre-tutor" class="formulario__label">Segundo Nombre del Tutor</label>
+        <input type="text" id="2nombre-tutor" name="2nombre-tutor" class="formulario__input" placeholder="Segundo Nombre del Tutor">
 
-        
-      </form>
+        <label for="apellidos-tutor" class="formulario__label">Apellidos del Tutor</label>
+        <input type="text" id="apellidos-tutor" name="apellidos-tutor" class="formulario__input" placeholder="Apellidos del Tutor" required>
+
+        <label for="sexo" class="formulario__label">Sexo</label>
+        <select id="sexo" name="sexo" class="formulario__select" required>
+          <option value="">Seleccionar</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+        </select>
+      </div>
+
+      <div class="formulario__columna">
+        <label for="edad" class="formulario__label">Edad del Tutor</label>
+        <input type="text" id="edad" name="edad" class="formulario__input" required>
+
+        <label for="telefono" class="formulario__label">Teléfono</label>
+        <input type="text" id="telefono" name="telefono" class="formulario__input" placeholder="Teléfono" required>
+
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" class="formulario__input" placeholder="ejemplo@correo.com" required>
+
+        <label for="direccion" class="formulario__label">Dirección de casa familiar</label>
+        <input type="text" id="direccion" name="direccion" class="formulario__input" required>
+
+        <label for="ocupacion" class="formulario__label">Ocupación del Tutor</label>
+        <input type="text" id="ocupacion" name="ocupacion" class="formulario__input" required>
+      </div>
     </div>
+
+    <div class="formulario__botones">
+      <button type="submit" class="formulario__boton">Guardar registro</button>
+    </div>
+  </form>
+</div>
+
   
   </main>
  

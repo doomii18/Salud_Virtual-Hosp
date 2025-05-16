@@ -34,26 +34,32 @@
   
 <main>
 
-  
-  <div id="registrar-historial" class="content" >
-  <h1 class="historial">Historial Médico Registrado</h1>
-  <table id="tablaHistorial">
-    <thead>
-      <tr>
-        <th>ID Paciente</th>
-        <th>Código</th>
-        <th>Diagnóstico</th>
-        <th>Tratamiento</th>
-        <th>Pronóstico</th>
-        <th>Fecha</th>
-        <th>Peso (lbs)</th>
-        <th>Medida</th>
+  <div class="tabla">
+  <h1 class="tabla__titulo">
+    <img src="../IMG/sesion.png" alt="icono historial" class="tabla__icono">
+    Historial Médico Registrado
+  </h1>
+
+  <table class="tabla__estructura" id="tablaHistorial">
+    <thead class="tabla__cabecera">
+      <tr class="tabla__fila">
+        <th class="tabla__encabezado">ID Paciente</th>
+        <th class="tabla__encabezado">Código</th>
+        <th class="tabla__encabezado">Diagnóstico</th>
+        <th class="tabla__encabezado">Tratamiento</th>
+        <th class="tabla__encabezado">Pronóstico</th>
+        <th class="tabla__encabezado">Fecha</th>
+        <th class="tabla__encabezado">Peso (lbs)</th>
+        <th class="tabla__encabezado">Medida</th>
+        <th class="tabla__encabezado">Editar</th>
+
       </tr>
     </thead>
-    <tbody>
-      <!-- Datos serán insertados aquí por JS -->
+    <tbody class="tabla__cuerpo">
+      <!-- Filas serán insertadas aquí por JavaScript -->
     </tbody>
   </table>
+</div>
 
   
 </main>
