@@ -149,7 +149,7 @@ function ajustarMargenFooter() {
                 <button class="editar-btn" onclick="editarFila(${index})">Editar</button>
             </td>
             <td>
-                <button class="eliminar-btn" onclick="eliminarFila(${index})">Eliminar</button>
+                <button class="btn-delete" onclick="eliminarFila(${index})">Eliminar</button>
             </td>
         `;
     });

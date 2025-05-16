@@ -32,33 +32,31 @@
     
     <main>
 
-      
-        <div id="pacientes" class="content">
-            <h1 class="pacientesregistrados">
-                <img src="../IMG/pediatric.png" alt="icono registrados" class="icono-registrados">Pacientes Registrados</h1>
-            <table id="tablaPacientes">
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Primer Nombre</th>
-                        <th>Segundo Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Edad</th>
-                        <th>Sexo</th>
-                        <th>Alergias</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí se agregarán las filas con JavaScript -->
-                    <tr class="empty-row"><td colspan="10"></td></tr>
-                    <tr class="empty-row"><td colspan="11"></td></tr>
+      <div class="tabla">
+  <h1 class="tabla__titulo">
+    <img src="../IMG/pediatric.png" alt="icono registrados" class="tabla__icono">Pacientes Registrados
+  </h1>
+  <table class="tabla__estructura" id="tablaPacientes">
+    <thead class="tabla__cabecera">
+      <tr class="tabla__fila">
+        <th class="tabla__encabezado">Código</th>
+        <th class="tabla__encabezado">Primer Nombre</th>
+        <th class="tabla__encabezado">Segundo Nombre</th>
+        <th class="tabla__encabezado">Apellidos</th>
+        <th class="tabla__encabezado">Fecha Nacimiento</th>
+        <th class="tabla__encabezado">Edad</th>
+        <th class="tabla__encabezado">Sexo</th>
+        <th class="tabla__encabezado">Alergias</th>
+        <th class="tabla__encabezado">Editar</th>
+        <th class="tabla__encabezado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="tabla__cuerpo">
+    </tbody>
+  </table>
+</div>
 
-                </tbody>
-            </table>
-        </div>
+
     </main>
     
    

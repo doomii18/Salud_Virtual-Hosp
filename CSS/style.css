@@ -81,13 +81,11 @@ body {
   border: 3px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
-/*======================================================CULMINACION DEL MENÚ======================================================*/
-
+/*======================================================CULMINACION DEL MENÚ CON BEM======================================================*/
 
 
-/*==================PANTALLA DE INICIO==================*/
 
+/*==================PANTALLA DE INICIO CON BEM==================*/
 .inicio {
   padding: 20px;
 }
@@ -124,7 +122,7 @@ body {
   border: 1px solid #097051;
 }
 
-/* === RESPONSIVE PARA TABLETS Y CELULARES === */
+/* === RESPONSIVE PARA TABLETS Y CELULARES USO DE BEM ================ */
 @media (max-width: 768px) {
   .inicio__contenedor {
     flex-direction: column;
@@ -158,151 +156,130 @@ body {
     font-size: 13px;
   }
 }
-/* === Información de los contenedores de MISION VISION Y VALORES ===*/
-.info-wrapper {
-  display: flex; 
-  justify-content: space-between; 
-  margin-top: 10px; /* Espacio entre el logo y los contenedores */
-  margin-left: 20px;
-  margin-right: 10px;
+
+/*==================METODOLOGIA BEM INTEGRADA EN LAS TABLAS DE MANERA GENERAL=====================*/
+.tabla {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 10px;
+  overflow-x: auto; /* importante para responsividad */
 }
 
-.infoM-container,
-.infoVV-container,
-.infoV-container {
-  font-size: 15px;
-  background-color: #ffffff; 
-  padding: 15px; 
-  border-radius: 10px; 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  margin-top: 10px; 
-  text-align: center; 
-  width: 26%; /* Ajustar el ancho de los contenedores */
-}
-
-.infoM-container:hover,
-.infoVV-container,
-.infoV-container:hover {
-  transform: scale(1); /* Aumentar tamaño al pasar el cursor */
-}
-
-
-.infoVV-container {
-  background-color: #f9f9f9; 
-  border: 1px solid #90dac4; 
-  border-radius: 8px;
-  padding: 20px; 
-  margin: 20px 0; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-.infoVV-container h3 {
-  text-align: center; 
-  color: #333; 
-  margin-bottom: 15px; /* Espacio debajo del título */
-}
-
-.infoVV-container ul {
-  list-style-type: none; /* Sin viñetas */
-  padding: 0; 
-}
-
-.infoVV-container li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd; 
-  color: #555; 
-}
-
-.infoVV-container li:last-child {
-  border-bottom: none; 
-}
-
-.infoVV-container li strong {
-  color: #165756; /* Color para los títulos de los valores */
-}
-
-.infoM-container, .infoV-container {
-    background-color: #e9f7fe; 
-    border: 1px solid #b2e0f8; 
-    border-radius: 8px; 
-    padding: 15px; 
-    margin: 20px 0; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-.infoM-container h3, .infoV-container h3 {
-    text-align: center; 
-    color: #000000;
-    margin-bottom: 10px;
-}
-
-.infoM-container p, .infoV-container p {
-    color: #333;
-    line-height: 1.6; 
-    margin: 0;
-}
-
-.infoM-container, .infoV-container {
-  background-color: #f9f9f9; 
-  border: 1px solid  #90dac4;
-  border-radius: 8px; 
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-.infoM-container h3, .infoV-container h3 {
-  text-align: center; 
+/* Título de la tabla */
+.tabla__titulo {
   color: #333;
-  margin-bottom: 15px; 
+  text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.infoM-container p, .infoV-container p {
-  color: #555; 
-  line-height: 1.6; /* Espaciado entre líneas */
-  margin: 0; /* Sin margen */
+.tabla__icono {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
 }
 
-/*TAMANIO DE IMAGENES TIPO ICONO PARA VALORES, MISION Y VISION*/
-.icono-titulo {
-  width: 24px; 
-  height: auto; 
-  margin-right: 4px; 
-  vertical-align: middle; 
+/* Estructura de tabla */
+.tabla__estructura {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.tabla__cabecera {
+  background: none;
+}
 
-/*PANTALLA DE INICIO  QUERY PARA LAS TARJETAS*/
+.tabla__encabezado {
+  background-color: #1d5154;
+  color: white;
+  font-size: 14px;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
 
-/* === INFO BOXES (Misión, Visión, Valores) === */
-@media (max-width: 768px) {
-  .info-wrapper {
-    flex-direction: column;
-    align-items: center;
+.tabla__cuerpo {
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.tabla__fila {
+  transition: background-color 0.3s;
+}
+
+.tabla__fila--vacia {
+  height: 0px;
+}
+
+/* Celdas comunes */
+.tabla__estructura td {
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 1px solid #ddd;
+  max-width: 4px;
+  word-wrap: break-word;
+}
+
+/* Botones */
+.btn-delete {
+  background-color: #c52c24;
+  color: white;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editar-btn {
+  background-color: #168771;
+  color: white;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editar-btn:hover {
+  background-color: #709683;
+  transform: scale(1.05);
+}
+
+.btn-delete:hover {
+  background-color: #9b6e60;
+  transform: scale(1.05);
+}
+
+.editar-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .tabla__titulo {
+    font-size: 1.2em;
   }
 
-  .infoM-container,
-  .infoVV-container,
-  .infoV-container {
-    width: 90%;
+  .tabla__estructura {
+    display: block;
+    overflow-x: auto;
+    font-size: 12px;
+  }
+
+  .tabla__estructura th,
+  .tabla__estructura td {
+    padding: 4px;
+    max-width: 80px;
   }
 }
+/*=========================ACA TERMINA EL DISEÑO DE LAS TABLAS CON LA METODOLGIA BEM=================== */
 
 
-/* === SERVICIOS CARDS === */
-@media (max-width: 480px) {
-  .servicio-card {
-    width: 100%;
-  }
-}
-
-
-/*====================================AQUI TERMINA LOS DE INICIO====================================*/
-
-
-
-/*================== FOOTER ("ya tiene BEM")  ==================*/
-
+/*================= INICIO DE FOOTER ("ya tiene BEM")  ==================*/
 .footer-contacto {
   display: flex;
   flex-direction: column;
@@ -396,8 +373,144 @@ body {
     width: 100%;
   }
 }
-/*====================================AQUI TERMINA EL FOOTER====================================*/
+/*====================================AQUI TERMINA EL FOOTER CON BEM====================================*/
 
+
+/* === Información de los contenedores de MISION VISION Y VALORES ===*/
+.info-wrapper {
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 10px; /* Espacio entre el logo y los contenedores */
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.infoM-container,
+.infoVV-container,
+.infoV-container {
+  font-size: 15px;
+  background-color: #ffffff; 
+  padding: 15px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  margin-top: 10px; 
+  text-align: center; 
+  width: 26%; /* Ajustar el ancho de los contenedores */
+}
+
+.infoM-container:hover,
+.infoVV-container,
+.infoV-container:hover {
+  transform: scale(1); /* Aumentar tamaño al pasar el cursor */
+}
+
+.infoVV-container {
+  background-color: #f9f9f9; 
+  border: 1px solid #90dac4; 
+  border-radius: 8px;
+  padding: 20px; 
+  margin: 20px 0; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.infoVV-container h3 {
+  text-align: center; 
+  color: #333; 
+  margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.infoVV-container ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0; 
+}
+
+.infoVV-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; 
+  color: #555; 
+}
+
+.infoVV-container li:last-child {
+  border-bottom: none; 
+}
+
+.infoVV-container li strong {
+  color: #165756; /* Color para los títulos de los valores */
+}
+
+.infoM-container, .infoV-container {
+    background-color: #e9f7fe; 
+    border: 1px solid #b2e0f8; 
+    border-radius: 8px; 
+    padding: 15px; 
+    margin: 20px 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.infoM-container h3, .infoV-container h3 {
+    text-align: center; 
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.infoM-container p, .infoV-container p {
+    color: #333;
+    line-height: 1.6; 
+    margin: 0;
+}
+
+.infoM-container, .infoV-container {
+  background-color: #f9f9f9; 
+  border: 1px solid  #90dac4;
+  border-radius: 8px; 
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.infoM-container h3, .infoV-container h3 {
+  text-align: center; 
+  color: #333;
+  margin-bottom: 15px; 
+}
+
+.infoM-container p, .infoV-container p {
+  color: #555; 
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin: 0; /* Sin margen */
+}
+
+/*TAMANIO DE IMAGENES TIPO ICONO PARA VALORES, MISION Y VISION*/
+.icono-titulo {
+  width: 24px; 
+  height: auto; 
+  margin-right: 4px; 
+  vertical-align: middle; 
+}
+
+/*PANTALLA DE INICIO  QUERY PARA LAS TARJETAS*/
+/* === INFO BOXES (Misión, Visión, Valores) === */
+@media (max-width: 768px) {
+  .info-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoM-container,
+  .infoVV-container,
+  .infoV-container {
+    width: 90%;
+  }
+}
+
+
+/* === SERVICIOS CARDS === */
+@media (max-width: 480px) {
+  .servicio-card {
+    width: 100%;
+  }
+}
+/*====================================AQUI TERMINA LOS DE INICIO====================================*/
 
 
 /*PANTALLA DE SERVICIO*/
@@ -434,7 +547,6 @@ body {
 .servicio-card:hover {
   transform: translateY(-5px); 
 }
-
 
 
 h3 {
@@ -489,7 +601,6 @@ main.shifted .content {
   max-width: 800px;
 }
 
-
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   header {
@@ -501,39 +612,14 @@ main.shifted .content {
   }
 }
 
-
 .servicio-card p{
   color: #000000;
 }
-
 /*AQUI TERMINA EL ESTILO DE SERVICIO*/
 
 
-
-
-/*fondo contendor blanco*/
-.content {
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  margin: 30px auto;
-  padding: 20px;
-  margin-left: 5PX;
-  margin-right: 5PX;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-/*AQUI TERMINA EL PIES DE PAGINA*/
-
-
-
-
-/*FORMILARIO DE REGISTRO DE TUTOR*/
-/* Título con imagen */
-#registrar-tutor {
+/* ====================== FORMULARIOS CON METODOLOGIA  BEM ======================== */
+.formulario {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -543,65 +629,45 @@ main.shifted .content {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#registrar-tutor h1{
-    text-align: center;
-    color: #104b49;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-/* === GRIDS FLEXIBLES === */
-@media (max-width: 768px) {
-  .SesionForm,
-  .form-grid,
-  .form-column {
-    flex-direction: column;
-  }
-
-  .form-column,
-   .form-grid {
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
-.icono-sesion {
-  width: 40px;
-  height: 40px;
-  margin-right: 12px;
-}
-
-.social-media {
+.formulario__titulo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #313f4d;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 5px;
+  gap: 10px;
 }
 
+.formulario__icono {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
-
-/* Grid de 2 columnas */
-.formS-grid {
+.formulario__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
-/* Columnas individuales */
-.forms-column {
+.formulario__columna {
   display: flex;
   flex-direction: column;
 }
 
-/* Estilos de campos */
-.forms-column label {
+.formulario__label {
   margin-top: 12px;
-  font-weight: bold;
   font-weight: 500;
   color: #333;
 }
 
-.forms-column input,
-.forms-column select {
+.formulario__input,
+.formulario__select {
   padding: 10px;
   margin-top: 6px;
   border-radius: 8px;
@@ -610,554 +676,68 @@ main.shifted .content {
   transition: border-color 0.3s;
 }
 
-.forms-column input:focus,
-.forms-column select:focus {
+.formulario__input:focus,
+.formulario__select:focus {
   outline: none;
   border-color: #3ca6ff;
 }
 
-/* Botón */
-.button-container {
+.formulario__botones {
   display: flex;
-  text-align: center;
+  justify-content: center;
   margin-top: 30px;
 }
 
-#guardar {
+.formulario__boton {
+  background-color: #d9f0ec;
   color: rgb(16, 66, 41);
   font-weight: bolder;
   border: none;
   font-size: 16px;
-  text-align: center;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-
-/*BOTONES DE LA TABLA DE LOS TUTORES REGISTRADOS */
-.btn-edit {
-  background-color: #e6d554;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-table tr td:nth-child(8) { /* Ajusta el número según la posición de la columna */
-  word-break: break-word;
-}
-
-#guardar:hover {
+.formulario__boton:hover {
   background-color: #7a7e7e;
+  color: #fff;
 }
 
-/* Responsive para pantallas pequeñas */
+/* Responsive */
 @media (max-width: 768px) {
-  .formS-grid {
+  .formulario__grid {
     grid-template-columns: 1fr;
   }
 
-  .inicio-sesion {
+  .formulario__titulo {
     flex-direction: column;
-    align-items: flex-start;
   }
 
-  .icono-sesion {
+  .formulario__icono {
     margin-bottom: 10px;
   }
 }
+/*=====================FIN DE FORMULARIOS CON METODOLOGIA BEM====================*/
 
 
-/* Estilo para pantallas pequeñas y tabletas (mini iPad) */
-@media (max-width: 768px) {
-  table {
-    width: 90%; 
-    margin: 10px auto; 
-  }
-
-  th, td {
-    padding: 8px; 
-    font-size: 12px; 
-    max-width: 100px; 
-    word-wrap: break-word; /* Ajustar texto largo */
-  }
-}
-
-/* Estilo para teléfonos */
-@media (max-width: 480px) {
-  table {
-    width: 95%; /* Ajustar el ancho de la tabla en teléfonos */
-  }
-
-  th, td {
-    padding: 4px; /* Menor padding en teléfonos */
-    max-width: 60px; /* Ancho máximo para celdas en teléfonos */
-
-  }
-}
-
-.eliminar-btn {
-  background-color: #d9534f; 
-  color: white; 
-  border: none; 
-  padding: 5px 10px; 
-  padding-bottom: 5px;
-  margin-right: 10px;
-  border-radius: 5px; 
-  cursor: pointer; 
-  font-size: 10px;
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-}
-
-.eliminar-btn:hover {
-  background-color: #c9302c; 
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-
-.eliminar-btn:focus {
-  outline: none; 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
-  .content {
-    margin: auto;
-    padding: 10px;
-  }
-
-  .menu-button {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
-
-/*CULMINACIÓN DE LA TABLA DE LOS TUTORES DE REGISTRADOS*/
-
-
-
-/*AGENDAR CITA*/
-
-/*Titulo 2 de Agendar Cita*/
-.agendar-cita {
-  font-size: 1.5em; 
-  font-weight: bold; 
-  color: #313f4d; 
-  text-align: center;
-  margin: 10px 10px; 
-  padding: 10px; /* Espaciado interno */
-}
-.icono-cita {
-  width: 30px; 
-  height: auto; 
-  vertical-align: middle; /* Alinear verticalmente con el texto */
-  margin-right: 10px; 
-}
-
-.icono-sesion {
-  width: 30px; 
-  height: auto; 
-  vertical-align: middle; 
-  margin-right: 10px; 
-}
-
-#tablapacientes{
-  background-color: #020000;
-}
-
-/*Titulo 2 de Agendar Paciente*/
-.registrar-paciente {
-  font-size: 1.5em; 
-  font-weight: bold; 
-  color: #313f4d; 
-  text-align: center; 
-  margin: 10px 10px; 
-  padding: 10px; 
-}
-
-.icono-paciente {
-  width: 30px; 
-  height: auto; 
-  vertical-align: middle;
-  margin-right: 10px; 
-}
-
-/*agendar paciente form */
-.formpaciente-grid {
-  display: flex;
-  justify-content: space-between;
-}
-
-.formpaciente-column {
-  flex: 1; 
-  margin-right: 10px; /* Espacio entre columnas */
-}
-
-.formpaciente-column:last-child {
-  margin-right: 10px; 
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-select {
-  padding: 10px;
+/*=====================INICIO DE Canvas del gráfico de barras CON METODOLOGIA BEM====================*/
+.dashboard__barras-canvas {
   border: 1px solid #ccc;
-  margin-bottom: 5%;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 90%;
-  
-}
-
-.buttonP-container {
-  margin-top: 20px;
-  text-align: center;
-  color: #000000;
-}
-
-.inicio-sesion {
-  font-size: 1.5em; 
-  font-weight: bold; 
-  color: #313f4d; 
-  text-align: center; 
-  margin: 10px 10px; 
-  padding: 10px; 
-}
-
-/*AQUI TERMINA EL FORMULARIO DE AGENDAR CITA*/
-
-/*FORMULARIO DE REGISTRAR PACIENTE*/
-#registrarp {
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  margin: 30px auto;
-  margin-top: 25px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#registrarp h1 {
-  text-align: center;
-  color: #104b49;
-  margin-bottom: 20px;
-  font-size: 26px;
-}
-.icono-paciente {
-  width: 40px;
-  height: 40px;
-  margin-right: 12px;
-}
-
-#pacienteForm {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-
-#pacienteForm {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-
-.form-column label{
-  margin-top: 12px;
-  font-weight: bold;
-  font-weight: 500;
-  color: #333;
-}
-.form-column input,
- .form-column select {
-  padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  transition: border-color 0.3s;
-}
-
-#pacienteForm input:focus,
-#pacienteForm select:focus {
-  border-color: #104b49;
-  outline: none;
-  box-shadow: 0 0 5px rgba(16, 75, 73, 0.3);
-}
-
-.button-container {
-  text-align: right;
-}
-
-
-/* Responsive: en móviles solo una columna */
-@media (max-width: 768px) {
-  #SesionForm {
-    padding: 10px;
-  }
-}
-
-
-/* Grid de 2 columnas */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-/* Columnas individuales */
-.form-column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* === GRIDS FLEXIBLES === */
-@media (max-width: 768px) {
-  .pacienteForm,
-  .form-grid,
-  .form-column {
-    flex-direction: column;
-  }
-
-  .form-column,
-   .form-grid {
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
-/*FINALIDAD DE REGISTRAR PACIENTE*/
-
-
-
-/*PACIENTE REGISTRADO (TABLA)*/
-h1 {
-  color: #333;
-  text-align: center;
-  font-size: 1.5em; /* Tamaño de fuente adaptable */
-}
-
-table {
-  width: 100%; /* Ancho completo para pantallas pequeñas */
-  max-width: 900px; /* Ancho máximo de la tabla */
-  margin: 5px auto; /* Centrar la tabla y dar margen superior */
   background-color: #fff;
-  border-collapse: collapse;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-  font-size: 10px;
-  padding: 14px;
-  text-align: left;
-  border: 1px solid #ddd;
-  max-width: 4px;
-  word-wrap: normal;
-}
-
-
-td{
-  font-size: 10px;
-  padding: 2px;
-}
-th {
-  background-color: #1d5154;
-  color: white;
-}
-
-tr:hover {
-  background-color: #f1f1f1;
-}
-
-.empty-row {
-  height: 0px; /* Altura de las filas vacías */
-}
-
-.icono-registrados {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
-}
-
-.icono-Tutoresgistrados {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
-}
-
-.btn-delete {
-  background-color: #c52c24;
-  color: white;
-  border: none;
-  padding: 6px 6px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.editar-btn {
-  background-color: #168771; 
-  color: white;
-  border: none; 
-  padding: 5px 15px; 
-  margin-right: 10px;
-  border-radius: 5px;
-  cursor: pointer; 
-  font-size: 10px;
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-}
-
-.editar-btn:hover {
-  background-color: #709683;
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-
-.editar-btn:focus {
-  outline: none; 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra al hacer*/}
-
-
-
-/* Estilo para pantallas pequeñas */
-@media (max-width: 700px) {
-  h1 {
-    font-size: 1.2em; /* Ajustar tamaño de fuente */
-  }
-
-  table {
-    font-size: 12px;
-    display: block; /* Hacer que la tabla sea un bloque para permitir el desplazamiento */
-    overflow-x: auto; /* desplazamiento horizontal */
-  }
-  
-  th, td {
-    padding: 4px; 
-    max-width: 80px; /* Ancho máximo para celdas */
-  }
-}
-
-/*FORMULARIO DE HISTORIAL MEDICO*/
-
-#registrar-historial {
-  text-align: center;
-  color: #104b49;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.icono-historial {
-  width: 30px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-textarea {
-  height: 80px;
-  resize: vertical;
-}
-
-.checkbox-container {
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.checkbox-container input {
-  margin-right: 8px;
-}
-
-.btn-guardar {
-  margin-top: 25px;
-  text-align: center;
-  background-color: #1d7fa1;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn-guardar:hover {
-  background-color: #186580;
-}
-
-@media (max-width: 600px) {
-  form {
-    padding: 15px;
-  }
-}
-
-/*AQUI TERMINA EL REGISTRO DE HISTORIAL MEDICO*/
-
-
-
-/*SIMULACIÓN DEL DASBOARD (MEJORAR EN EL SIGUIENTE CORTE)*/
-
-
-/* Contenedor de barras */
-.contenedor-barras {
-  background-color: rgb(255, 255, 255);
-
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 100%;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(190, 180, 180, 0.1);
-  text-align: center;
-}
-
-/* Gráfico de barras */
-#graficoPacientes {
-  border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-
 }
 
-/* Contenedor de pastel */
-.contenedor-pastel {
+/* Contenedor de gráfico de pastel */
+.dashboard__pastel {
   border: 2px solid #ddd;
-  background-color: rgb(255, 255, 255);
-
+  background-color: #fff;
   border-radius: 12px;
   padding: 20px;
   max-width: 100%;
@@ -1165,28 +745,27 @@ textarea {
   text-align: center;
 }
 
-/* Canvas pastel */
-#graficoPastel {
+/* Canvas del gráfico de pastel */
+.dashboard__pastel-canvas {
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
   height: auto;
 }
 
-/* Responsive ajustes */
+/* Responsive */
 @media (max-width: 768px) {
-  .contenedor-barras,
-  .contenedor-pastel {
+  .dashboard__barras,
+  .dashboard__pastel {
     padding: 15px;
   }
 
-  #graficoPacientes,
-  #graficoPastel {
+  .dashboard__barras-canvas,
+  .dashboard__pastel-canvas {
     max-width: 100%;
     width: 100%;
   }
 }
-
 
 /*dashboard*/
 /*Titulo*/

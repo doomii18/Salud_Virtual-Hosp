@@ -34,43 +34,52 @@
   
 <main>
 
-  <div id="agendar" class="content">
-    <h1 class="agendar-historial">
-      <img src="../IMG/historial.png" alt="Ícono de cita" class="icono-historial">
-       Historial Médico
-    </h1>
-      <form id="historialForm">
-        <label for="idPaciente">IdPacientes:</label>
-        <select id="idPaciente">
+  <div class="formulario">
+  <h1 class="formulario__titulo">
+    <img src="../IMG/historial.png" alt="Ícono de historial" class="formulario__icono">
+    Historial Médico
+  </h1>
+  <form id="historialForm">
+    <div class="formulario__grid">
+      <div class="formulario__columna">
+        <label for="idPaciente" class="formulario__label">ID del Paciente</label>
+        <select id="idPaciente" name="idPaciente" class="formulario__select">
           <option value="">---------</option>
           <option value="1">Paciente 1</option>
           <option value="2">Paciente 2</option>
         </select>
-    
-        <label for="codigo">Código Historial Médico:</label>
-        <input type="text" id="codigo" />
-    
-        <label for="diagnostico">Diagnóstico:</label>
-        <textarea id="diagnostico"></textarea>
-    
-        <label for="tratamiento">Tratamiento:</label>
-        <textarea id="tratamiento"></textarea>
-    
-        <label for="pronostico">Pronóstico:</label>
-        <input type="text" id="pronostico" />
-    
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" />
-    
-        <label for="peso">Peso en libras:</label>
-        <input type="number" id="peso" />
-    
-        <label for="medida">Medida:</label>
-        <input type="text" id="medida" />
-    
-        <button type="button" class="btn-guardar" onclick="guardarHistorial()">Guardar</button>
-      </form>
-  
+
+        <label for="codigo" class="formulario__label">Código Historial Médico</label>
+        <input type="text" id="codigo" name="codigo" class="formulario__input">
+        
+        <label for="diagnostico" class="formulario__label">Diagnóstico</label>
+        <textarea id="diagnostico" name="diagnostico" class="formulario__input" rows="3"></textarea>
+
+        <label for="tratamiento" class="formulario__label">Tratamiento</label>
+        <textarea id="tratamiento" name="tratamiento" class="formulario__input" rows="3"></textarea>
+      </div>
+
+      <div class="formulario__columna">
+        <label for="pronostico" class="formulario__label">Pronóstico</label>
+        <input type="text" id="pronostico" name="pronostico" class="formulario__input">
+
+        <label for="fecha" class="formulario__label">Fecha</label>
+        <input type="date" id="fecha" name="fecha" class="formulario__input">
+
+        <label for="peso" class="formulario__label">Peso en libras</label>
+        <input type="number" id="peso" name="peso" class="formulario__input">
+
+        <label for="medida" class="formulario__label">Medida</label>
+        <input type="text" id="medida" name="medida" class="formulario__input">
+      </div>
+    </div>
+
+    <div class="formulario__botones">
+      <button type="button" class="formulario__boton" onclick="guardarHistorial()">Guardar</button>
+    </div>
+  </form>
+</div>
+
 </main>
 
  

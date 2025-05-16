@@ -29,64 +29,70 @@
   </nav>
 </header>
   
-
-  
     <main>
-          <!-- Sección Agendar (oculta por defecto) -->
-    <div id="agendar" class="content">
-        <h1 class="agendar-cita">
-          <img src="../IMG/Calendario.png" alt="Ícono de cita" class="icono-cita">
-          Agendar Cita Médica
-        </h1>
-        <form id="citaForm">
-          <div class="form-grid">
-            <div class="form-column">
-              <label for="codigoCita">Código de Cita</label>
-              <input type="text" id="codigoCita" name="codigoCita" placeholder="Código de cita" readonly style="background-color: #e0e0e0;">
-              <label for="1nombre-tutor">Primer Nombre del Tutor</label>
-              <input type="text" id="1nombre-tutor" name="1nombre-tutor" placeholder="Primer Nombre del Tutor" required>
-              <label for="2nombre-tutor">Segundo Nombre del Tutor</label>
-              <input type="text" id="2nombre-tutor" name="2nombre-tutor" placeholder="Segundo Nombre del Tutor">        
-              <label for="apellidos-tutor">Apellidos del Tutor</label>
-              <input type="text" id="apellidos-tutor" name="apellidos-tutor" placeholder="Apellidos del Tutor">
-              <label for="1nombre-paciente">Primer Nombre del Paciente</label>
-              <input type="text" id="1nombre-paciente" name="1nombre-paciente" placeholder="Primer Nombre del Paciente" required>
-              <label for="2nombre-paciente">Segundo Nombre del Paciente</label>
-              <input type="text" id="2nombre-paciente" name="2nombre-paciente" placeholder="Segundo Nombre del Paciente">
-            </div>
-  
-            <div class="form-column">
-              <label for="apellidos-paciente">Apellidos del Paciente</label>
-              <input type="text" id="apellidos-paciente" name="apellidos-paciente" placeholder="Apellidos del paciente">
-              <label for="razon">Razón/Motivo Cita</label>
-              <input type="text" id="razon" name="razon" placeholder="Motivo de la cita" required>
-              <label for="fecha">Fecha de Cita</label>
-              <input type="date" id="fecha" name="fecha" required>
-              <label for="personal-medico">Médico/Doctor</label>
-              <select id="personal-medico" name="personal-medico" required>
-                <option value="">Seleccionar</option>
-                <option value="Dra.Maria del Carmen Calero Cano">Dra. Maria del Carmen Calero Cano</option>
-                <option value="Dr.Carlos Daniel Gutierrez Morales">Dr. Carlos Daniel Gutierrez Morales</option>
-              </select>
 
-              <label for="estado">Estado de Cita</label>
-              <select id="estado" name="estado" required>
-                <option value="">Seleccionar</option>
-                <option value="Cancelado">Cancelado</option>
-                <option value="Confirmado">Confirmado</option>
-              </select>
+ <div class="formulario">
+  <h1 class="formulario__titulo">
+    <img src="../IMG/Calendario.png" alt="Ícono de cita" class="formulario__icono">
+    Agendar Cita Médica
+  </h1>
+  <form id="citaForm">
+    <div class="formulario__grid">
+      <div class="formulario__columna">
+        <label for="codigoCita" class="formulario__label">Código de Cita</label>
+        <input type="text" id="codigoCita" name="codigoCita" class="formulario__input" placeholder="Código de cita" readonly style="background-color: #e0e0e0;">
 
-           
-              <label for="hora">Hora</label>
-              <input type="time" id="hora" name="hora" required>
-            </div>
-          </div>
-  
-          <div class="button-container">
-            <button type="submit" id="guardar">Guardar Cita</button>
-          </div>
-        </form>
+        <label for="1nombre-tutor" class="formulario__label">Primer Nombre del Tutor</label>
+        <input type="text" id="1nombre-tutor" name="1nombre-tutor" class="formulario__input" placeholder="Primer Nombre del Tutor" required>
+
+        <label for="2nombre-tutor" class="formulario__label">Segundo Nombre del Tutor</label>
+        <input type="text" id="2nombre-tutor" name="2nombre-tutor" class="formulario__input" placeholder="Segundo Nombre del Tutor">
+
+        <label for="apellidos-tutor" class="formulario__label">Apellidos del Tutor</label>
+        <input type="text" id="apellidos-tutor" name="apellidos-tutor" class="formulario__input" placeholder="Apellidos del Tutor">
+
+        <label for="1nombre-paciente" class="formulario__label">Primer Nombre del Paciente</label>
+        <input type="text" id="1nombre-paciente" name="1nombre-paciente" class="formulario__input" placeholder="Primer Nombre del Paciente" required>
+
+        <label for="2nombre-paciente" class="formulario__label">Segundo Nombre del Paciente</label>
+        <input type="text" id="2nombre-paciente" name="2nombre-paciente" class="formulario__input" placeholder="Segundo Nombre del Paciente">
       </div>
+
+      <div class="formulario__columna">
+        <label for="apellidos-paciente" class="formulario__label">Apellidos del Paciente</label>
+        <input type="text" id="apellidos-paciente" name="apellidos-paciente" class="formulario__input" placeholder="Apellidos del Paciente">
+
+        <label for="razon" class="formulario__label">Razón/Motivo Cita</label>
+        <input type="text" id="razon" name="razon" class="formulario__input" placeholder="Motivo de la cita" required>
+
+        <label for="fecha" class="formulario__label">Fecha de Cita</label>
+        <input type="date" id="fecha" name="fecha" class="formulario__input" required>
+
+        <label for="personal-medico" class="formulario__label">Médico/Doctor</label>
+        <select id="personal-medico" name="personal-medico" class="formulario__select" required>
+          <option value="">Seleccionar</option>
+          <option value="Dra.Maria del Carmen Calero Cano">Dra. Maria del Carmen Calero Cano</option>
+          <option value="Dr.Carlos Daniel Gutierrez Morales">Dr. Carlos Daniel Gutierrez Morales</option>
+        </select>
+
+        <label for="estado" class="formulario__label">Estado de Cita</label>
+        <select id="estado" name="estado" class="formulario__select" required>
+          <option value="">Seleccionar</option>
+          <option value="Cancelado">Cancelado</option>
+          <option value="Confirmado">Confirmado</option>
+        </select>
+
+        <label for="hora" class="formulario__label">Hora</label>
+        <input type="time" id="hora" name="hora" class="formulario__input" required>
+      </div>
+    </div>
+
+    <div class="formulario__botones">
+      <button type="submit" class="formulario__boton">Guardar Cita</button>
+    </div>
+  </form>
+</div>
+
   
     </main>
   
