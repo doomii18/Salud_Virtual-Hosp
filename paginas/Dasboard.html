@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
-    <link rel="stylesheet" href="../CSS/style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salud Virtual</title>
+  <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+  <link rel="stylesheet" href="../CSS/style.css" />
 </head>
-<body>
-  <header class="header">
+
+<body> 
+    <header class="header">
   <!-- Botón toggle para mostrar/ocultar el menú -->
   <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
   <label for="header__toggle" class="header__toggle-button">☰</label>
@@ -27,36 +28,100 @@
     <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
     <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
   </nav>
+
+
 </header>
 
-      
-    <main>
-    
-<h1 class="dashboard__heading">Panel de Datos de Pacientes</h1>
+<h1 class="dashboard__heading">Dashboard – Hospital Pediátrico</h1>
+    <section class="summary">
+      <div class="summary__card"><p class="summary__label">Citas Totales</p><h2 class="summary__value">7663</h2></div>
+      <div class="summary__card"><p class="summary__label">Consultas Atendidas</p><h2 class="summary__value">6422</h2></div>
+      <div class="summary__card"><p class="summary__label">Citas Reprogramadas</p><h2 class="summary__value">34</h2></div>
+      <div class="summary__card"><p class="summary__label">Citas Canceladas</p><h2 class="summary__value">14</h2></div>
+      <div class="summary__card"><p class="summary__label">Citas Modificadas</p><h2 class="summary__value">09</h2></div>
+      <div class="summary__card"><p class="summary__label">Pacientes con Alergias</p><h2 class="summary__value">4214</h2></div>
+      <div class="summary__card"><p class="summary__label">Total de Pacientes Rurales vs Urbanos</p><h2 class="summary__value">7663</h2></div>
+    </section>
 
-<div class="dashboard">
-  <div class="dashboard__chart">
-    <h3 class="dashboard__title">Solicitudes de Citas</h3>
-    <canvas class="dashboard__canvas" id="citasChart" width="450" height="200"></canvas>
-  </div>
-  <div class="dashboard__chart">
-    <h3 class="dashboard__title">Promedio Niños Mayores de 10</h3>
-    <canvas class="dashboard__canvas" id="mayoresChart" width="450" height="200"></canvas>
-  </div>
-  <div class="dashboard__chart">
-    <h3 class="dashboard__title">Total Niños Menores de 10</h3>
-    <canvas class="dashboard__canvas" id="menoresChart" width="450" height="200"></canvas>
-  </div>
-  <div class="dashboard__chart">
-    <h3 class="dashboard__title">Pacientes: Rural vs Ciudad</h3>
-    <canvas class="dashboard__canvas" id="ubicacionChart" width="250" height="200"></canvas>
-  </div>
-</div>
+    <section class="charts">
+      <div class="charts__box">
+        <div class="charts__header">
+          <h2 class="charts__title">Registros Totales</h2>
+          <span class="charts__subtitle">De enero a mayo</span>
+        </div>
+        <canvas id="completedTrend"></canvas>
+      </div>
+      <div class="charts__box">
+        <div class="charts__header">
+          <h2 class="charts__title">Citas Atendidas</h2>
+          <span class="charts__subtitle">De enero a mayo</span>
+        </div>
+        <canvas id="avgDuration"></canvas>
+      </div>
+    </section>
 
+    <section class="details">
+      <div class="details__box">
+        <div class="details__header">
+          <h2 class="details__title">Citas Reprogramadas</h2>
+          <span><strong>De enero a mayo</strong></span>
+        </div>
+        <ul class="details__list">
+          <li class="details__item"><span>Menores de 10 años</span><span>87</span></li>
+          <li class="details__item"><span>Mayores de 10 años</span><span>576</span></li>
+        </ul>
+      </div>
 
-   </main>
+      <div class="details__box">
+        <div class="details__header">
+          <h2 class="details__title">Citas Canceladas</h2>
+          <span><strong>De enero a mayo</strong></span>
+        </div>
+        <ul class="details__list">
+          <li class="details__item"><span>Menores de 10 años</span><span>12</span></li>
+          <li class="details__item"><span>Mayores de 10 años</span><span>2</span></li>
+        </ul>
+      </div>
 
-<footer class="footer-contacto">
+      <div class="details__box">
+        <div class="details__header">
+          <h2 class="details__title">Citas Modificadas</h2>
+          <span><strong>De enero a mayo</strong></span>
+        </div>
+        <ul class="details__list">
+          <li class="details__item"><span>Menores de 10 años</span><span>3</span></li>
+          <li class="details__item"><span>Mayores de 10 años</span><span>6</span></li>
+        </ul>
+      </div>
+
+      <div class="details__box">
+        <div class="details__header">
+          <h2 class="details__title">Pacientes con Alergias</h2>
+          <span><strong>De enero a mayo</strong></span>
+        </div>
+        <canvas id="Alergias"></canvas>
+      </div>
+    </section>
+
+    <section class="distribution">
+      <h2 class="distribution__title">Distribución de Pacientes</h2>
+      <div class="distribution__pair">
+        <div class="distribution__item">
+          <h3 class="distribution__label">Rural vs Urbano</h3>
+          <canvas id="patientChart" class="distribution__chart"></canvas>
+        </div>
+        <div class="distribution__item">
+          <h3 class="distribution__label">Por Género</h3>
+          <canvas id="tipoAtencionChart" class="distribution__chart"></canvas>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../JS/chart.js"></script>
+  <script src="../JS/scripts.js"></script>
+  
+  <footer class="footer-contacto">
   <div class="footer-contacto__row">
     <div class="footer-contacto__section footer-contacto__section--info">
       <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
@@ -82,9 +147,5 @@
   </div>
 </footer>
 
-  <script src="../JS/chart.js"></script>
-
-  <script src="../JS/scripts.js"></script>
 </body>
-
 </html>
