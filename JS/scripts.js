@@ -213,119 +213,115 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
 
-/*dashboard*/
-const ctxCitas = document.getElementById('citasChart').getContext('2d');
-const citasChart = new Chart(ctxCitas, {
-    type: 'bar',
-    data: {
-        labels: ['Semana', 'Mes', 'Año'],
-        datasets: [{
-            label: 'Solicitudes de Citas',
-            data: [60, 260, 3120], 
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
- responsive: false,
-  maintainAspectRatio: false,
-          plugins: {
-            legend: {
-                display: true
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
+// Citas completadas 
+new Chart(document.getElementById('completedTrend'), {
+  type: 'line',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+    datasets: [
+      {
+        label: 'Promedio de Niños Menores de 10 Años',
+        data: [138, 1290, 357, 768, 1534],
+        borderColor: 'purple',
+        fill: false
+      },
+      {
+        label: 'Promedio de Niños Mayores de 10 Años',
+        data: [435, 565, 1500, 700, 376 ],
+        borderColor: 'gold',
+        fill: false
+      }
+    ]
+  }
 });
 
-const ctxMayores = document.getElementById('mayoresChart').getContext('2d');
-const mayoresChart = new Chart(ctxMayores, {
-    type: 'line',
-    data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-        datasets: [{
-            label: 'Promedio de Niños Mayores de 10 Años',
-            data: [10, 15, 8, 20, 12], 
-            backgroundColor: 'rgba(153, 102, 255, 0.6)',
-            borderColor: 'rgba(153, 102, 255, 1)',
-            borderWidth: 2,
-            fill: true
-        }]
-    },
-    options: {
- responsive: false,
-  maintainAspectRatio: false,        plugins: {
-            legend: {
-                display: true
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
+// CITAS ATENDIDAS
+new Chart(document.getElementById('avgDuration'), {
+  type: 'line',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+    datasets: [{
+      label: 'Atendidas',
+      data: [990, 422, 894,248,1603],
+      backgroundColor: 'blue',
+      borderColor: 'blue',
+      fill: false
+    }]
+  }
+});
+
+// Popular days of the week
+new Chart(document.getElementById('Alergias'), {
+  type: 'bar',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo',],
+    datasets: [{
+      label: 'Resultados de los pacientes alergicos',
+      data: [70, 240, 180, 200, 40],
+      backgroundColor: '#3182ce'
+    }]
+  }
 });
 
 
-
-const ctxMenores = document.getElementById('menoresChart').getContext('2d');
-const menoresChart = new Chart(ctxMenores, {
-    type: 'line',
-    data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-        datasets: [{
-            label: 'Total de Niños Menores de 10 Años',
-            data: [12, 14, 20, 16, 11], 
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1,
-            fill: true
-        }] 
-    },
-    options: {
-         responsive: false,
-  maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: true
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+const ctx = document.getElementById('patientChart').getContext('2d');
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['Urbano', 'Rural'],
+    datasets: [{
+      label: 'Pacientes',
+      data: [5964, 1699], // Puedes ajustar los valores según tu caso
+      backgroundColor: ['#ffe49d', '#72c2f1'],
+      borderColor: ['#f9d36f', '#4ba4e2'],
+      borderWidth: 1
+      
+    }]
+  },
+  options: {
+    responsive: false,
+    plugins: {
+      legend: {
+        position: 'top'
+      },
+      title: {
+        display: false
+      }
     }
+  }
 });
 
-const ctxUbicacion = document.getElementById('ubicacionChart').getContext('2d');
-const ubicacionChart = new Chart(ctxUbicacion, {
-    type: 'pie',
-    data: {
-        labels: ['Rural', 'Ciudad'],
-        datasets: [{
-            label: 'Distribución de Pacientes',
-            data: [75, 63],
-            backgroundColor: ['rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)'],
-            borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: false,
-  maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: true
-            }
+const tipoCtx = document.getElementById('tipoAtencionChart').getContext('2d');
+new Chart(tipoCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Niños', 'Niñas'],
+    datasets: [{
+      data: [65, 35],
+      backgroundColor: ['#42d8d6', '#8648cc'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '70%',
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: {
+          font: {
+            size: 14
+          },
+          color: '#555'
         }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `${context.label}: ${context.raw}%`;
+          }
+        }
+      }
     }
+  }
 });
-
-
