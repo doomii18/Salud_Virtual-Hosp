@@ -1,3 +1,96 @@
+// ===========LOGIN============
+
+document.addEventListener("DOMContentLoaded", function () {
+  const registerForm = document.getElementById("registerForm");
+  const loginForm = document.getElementById("loginForm");
+
+  function mostrarMensaje(texto, tipo = "error") {
+    const mensaje = document.getElementById("mensaje");
+    if (!mensaje) return;
+
+    mensaje.textContent = texto;
+    mensaje.className = "auth__mensaje";
+
+    if (tipo === "error") {
+      mensaje.classList.add("auth__mensaje--error");
+    } else {
+      mensaje.classList.add("auth__mensaje--success");
+    }
+
+    mensaje.style.display = "block";
+
+    setTimeout(() => {
+      mensaje.style.display = "none";
+    }, 4000);
+  }
+
+  // === Registro ===
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const user = document.getElementById("userRegistro").value.trim();
+      const email = document.getElementById("emailRegistro").value.trim();
+      const pass = document.getElementById("passwordRegistro").value.trim();
+      const confirm = document.getElementById("confirmRegistro").value.trim();
+
+      if (pass !== confirm) {
+        mostrarMensaje("Las contraseñas no coinciden.");
+        return;
+      }
+
+      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+      const existeUsuario = usuarios.some(
+        (u) => u.user.toLowerCase() === user.toLowerCase()
+      );
+
+      if (existeUsuario) {
+        mostrarMensaje("El usuario ya existe. Elige otro.");
+        return;
+      }
+
+      usuarios.push({ user, email, password: pass });
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+      mostrarMensaje("¡Registro exitoso!", "success");
+
+      setTimeout(() => {
+        window.location.href = "../paginas/Dasboard.html";
+      }, 1500);
+    });
+  }
+
+  // === Inicio de sesión ===
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const user = document.getElementById("userLogin").value.trim();
+      const pass = document.getElementById("passwordLogin").value.trim();
+
+      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+      const usuarioValido = usuarios.find(
+        (u) => u.user.toLowerCase() === user.toLowerCase() && u.password === pass
+      );
+
+      if (usuarioValido) {
+        mostrarMensaje("Inicio de sesión exitoso", "success");
+        setTimeout(() => {
+          window.location.href = "../paginas/Dasboard.html";
+        }, 1500);
+      } else {
+        mostrarMensaje("Usuario o contraseña incorrectos.");
+      }
+    });
+  }
+});
+
+
+//=================AQUI TERMINA=========================
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('pacienteForm');
 
@@ -211,8 +304,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+
   
 
+//====================INICIO DEL DASHBOARD======================
 // Citas completadas 
 new Chart(document.getElementById('completedTrend'), {
   type: 'line',
@@ -222,13 +317,13 @@ new Chart(document.getElementById('completedTrend'), {
       {
         label: 'Promedio de Niños Menores de 10 Años',
         data: [138, 1290, 357, 768, 1534],
-        borderColor: 'purple',
+        borderColor: '#4f46e5',
         fill: false
       },
       {
         label: 'Promedio de Niños Mayores de 10 Años',
         data: [435, 565, 1500, 700, 376 ],
-        borderColor: 'gold',
+        borderColor: '#10b981',
         fill: false
       }
     ]
@@ -243,14 +338,14 @@ new Chart(document.getElementById('avgDuration'), {
     datasets: [{
       label: 'Atendidas',
       data: [990, 422, 894,248,1603],
-      backgroundColor: 'blue',
-      borderColor: 'blue',
+      backgroundColor: '#C2410C',
+      borderColor: '#F97316',
       fill: false
     }]
   }
 });
 
-// Popular days of the week
+// barra de los resultados de los pacientes con alergias 
 new Chart(document.getElementById('Alergias'), {
   type: 'bar',
   data: {
@@ -258,12 +353,14 @@ new Chart(document.getElementById('Alergias'), {
     datasets: [{
       label: 'Resultados de los pacientes alergicos',
       data: [70, 240, 180, 200, 40],
-      backgroundColor: '#3182ce'
+      backgroundColor: '#60a5fa',
+      borderWidth: 1,
+      data: [40,230,180,200,50]
     }]
   }
 });
 
-
+// Graficos de los pacientes del campo o de la ciudad 
 const ctx = document.getElementById('patientChart').getContext('2d');
 new Chart(ctx, {
   type: 'pie',
@@ -271,8 +368,8 @@ new Chart(ctx, {
     labels: ['Urbano', 'Rural'],
     datasets: [{
       label: 'Pacientes',
-      data: [5964, 1699], // Puedes ajustar los valores según tu caso
-      backgroundColor: ['#ffe49d', '#72c2f1'],
+      data: [5964, 1699], 
+      backgroundColor: ['#fde68a', '#93c5fd'],
       borderColor: ['#f9d36f', '#4ba4e2'],
       borderWidth: 1
       
@@ -298,7 +395,7 @@ new Chart(tipoCtx, {
     labels: ['Niños', 'Niñas'],
     datasets: [{
       data: [65, 35],
-      backgroundColor: ['#42d8d6', '#8648cc'],
+      backgroundColor: ['#06b6d4', '#8b5cf6'],
       borderWidth: 0
     }]
   },
