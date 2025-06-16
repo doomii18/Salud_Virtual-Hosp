@@ -1,5 +1,3 @@
-//SCRIPT PARA EL HOME
-
 //para el home
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("nombre-usuario").textContent = "USUARIO";
   }
 });
+
+
 
 (function(){
     // Menú lateral (para páginas internas como home.html)
