@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mostrarMensaje("¡Registro exitoso!", "success");
 
       setTimeout(() => {
-        window.location.href = "../paginas/Dasboard.html";
+        window.location.href = "../paginas/home.html";
       }, 1500);
     });
   }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (usuarioValido) {
         mostrarMensaje("Inicio de sesión exitoso", "success");
         setTimeout(() => {
-          window.location.href = "../paginas/Dasboard.html";
+          window.location.href = "../paginas/home.html";
         }, 1500);
       } else {
         mostrarMensaje("Usuario o contraseña incorrectos.");
