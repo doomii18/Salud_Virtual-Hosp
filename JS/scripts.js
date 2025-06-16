@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mostrarMensaje("¡Registro exitoso!", "success");
 
       setTimeout(() => {
+        localStorage.setItem("usuarioActual",user);
         window.location.href = "../paginas/home.html";
       }, 1500);
     });
@@ -78,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (usuarioValido) {
         mostrarMensaje("Inicio de sesión exitoso", "success");
         setTimeout(() => {
+          localStorage.setItem("usuarioActual", user)
           window.location.href = "../paginas/home.html";
         }, 1500);
       } else {
@@ -86,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
 
 //=================AQUI TERMINA=========================
