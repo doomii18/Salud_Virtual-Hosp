@@ -1,3 +1,19 @@
+//SCRIPT PARA EL HOME
+
+//para el home
+
+document.addEventListener("DOMContentLoaded", function () {
+   const nombreUsuario = localStorage.getItem("usuarioActual");
+
+   if (nombreUsuario) {
+    document.getElementById("nombre-usuario").textContent = nombreUsuario.toUpperCase();
+   } else {
+    document.getElementById("nombre-usuario").textContent = "USUARIO";
+  }
+});
+
+
+
 (function(){
     // Menú lateral (para páginas internas como home.html)
     const menuToggle = document.querySelector('#menuToggle');
