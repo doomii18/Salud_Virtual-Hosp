@@ -1032,7 +1032,35 @@ nav{
 #menuLateral a {
   color: var(--color-blanco);
   text-decoration: none;
+  text-align:initial;
 }
+.menuLateral__button {
+  background-color: var(--color-principal);
+  border: none;
+  width: 250px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--color-blanco);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.menuLateral__button:hover {
+  background-color: red;
+}
+
+.menuLateral__button:hover {
+  background-color: red;
+  border: none;
+  width: 250px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 .menuLateral__brand {
   display: flex;
@@ -1195,6 +1223,10 @@ nav {
   padding: 20px;
   flex-grow: 1;
     
+}
+
+.button{
+  background-color: green;
 }
 
     /* ========== RESPONSIVE - MENÚ HAMBURGUESA ========== */

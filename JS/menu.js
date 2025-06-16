@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 (function(){
     // Menú lateral (para páginas internas como home.html)
     const menuToggle = document.querySelector('#menuToggle');
