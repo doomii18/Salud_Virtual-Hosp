@@ -102,8 +102,7 @@
         </nav>
         <!-- CONTENIDO PRINCIPAL -->
     <main>
-      
-  <div class="tabla">
+    <div class="tabla">
   <h1 class="tabla__titulo">
     <img src="../IMG/sesion.png" alt="icono registrados" class="tabla__icono">
     Tutores Registrados
@@ -112,12 +111,13 @@
   <div class="tabla__acciones">
     <input type="text" placeholder="Buscar tutor..." class="tabla__buscador" id="buscador-tutor">
 
-    <a href="../paginas/registrotutor.html" class="tabla__boton tabla__boton--agregar">
-  <img src="../IMG/add.png" alt="icono tutor" class="tabla__icono-boton">
-</a>
+    <button id="btnNuevo" class="tabla__boton tabla__boton--agregar">
+      <img src="../IMG/add.png" alt="icono tutor" class="tabla__icono-boton">
+    </button>
+
+
     <button class="tabla__boton tabla__boton--buscar-tutor"><img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton"></button>
-    <button class="tabla__boton tabla__boton--editar-tutor"><img src="../IMG/editar.png" alt="icono editar" class="tabla__icono-boton"></button>
-    <button class="tabla__boton tabla__boton--eliminar-tutor"> <img src="../IMG/delete.png" alt="icono eliminar" class="tabla__icono-boton"></button>  
+
   </div>
 
   <div class="tabla__contenedor">
@@ -134,6 +134,9 @@
       <th class="tabla__encabezado">Email</th>
       <th class="tabla__encabezado">Dirección Hogar</th>
       <th class="tabla__encabezado">Ocupación</th>
+      <th class="tabla__encabezado">Editar</th>
+      <th class="tabla__encabezado">Eliminar</th>
+
     </tr>
   </thead>
   <tbody class="tabla__cuerpo">
@@ -142,7 +145,63 @@
 </table>
 </div>
 </div>
+<!-- MODAL FORMULARIO TUTOR -->
+<div id="modal" class="modal" style="display: none;">
+  <div class="modal__contenido">
+    <span class="modal__cerrar cerrar">&times;</span>
+    <h2 class="modal__titulo">Registrar Tutor</h2>
+    
+    <form id="formTutor" class="formulario">
+      <div class="formulario__grid">
+        <!-- Columna izquierda -->
+        <div class="formulario__columna">
+          <label for="cedula" class="formulario__label">Cédula</label>
+          <input type="text" id="cedula" name="cedula" class="formulario__input" required>
 
+          <label for="primerNombre" class="formulario__label">Primer Nombre</label>
+          <input type="text" id="primerNombre" name="primerNombre" class="formulario__input" required>
+
+          <label for="segundoNombre" class="formulario__label">Segundo Nombre</label>
+          <input type="text" id="segundoNombre" name="segundoNombre" class="formulario__input">
+          
+          <label for="apellidos" class="formulario__label">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos" class="formulario__input" required>
+
+          <label for="sexo" class="formulario__label">Sexo</label>
+          <select id="sexo" name="sexo" class="formulario__select" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="formulario__columna">
+          <label for="edad" class="formulario__label">Edad</label>
+          <input type="number" id="edad" name="edad" class="formulario__input" required min="1" max="120">
+
+          <label for="telefono" class="formulario__label">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" class="formulario__input" required>
+
+          <label for="email" class="formulario__label">Email</label>
+          <input type="email" id="email" name="email" class="formulario__input" required>
+
+          <label for="direccion" class="formulario__label">Dirección</label>
+          <input type="text" id="direccion" name="direccion" class="formulario__input" required>
+
+          <label for="ocupacion" class="formulario__label">Ocupación</label>
+          <input type="text" id="ocupacion" name="ocupacion" class="formulario__input" required>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="formulario__botones">
+        <button type="submit" class="formulario__boton formulario__boton--guardar-paciente">Guardar registro</button>
+        <button type="button" class="formulario__boton formulario__boton--cancelar cerrar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
 
     </main>
     
@@ -174,10 +233,9 @@
   </div>
 </footer>
 
-  <script src="../JS/menu.js" defer></script>
-    <script src="../JS/Models.js" defer></script>
+  <script src="../JS/menu.js" ></script>
+  <script src="../JS/TutorAPIModel.js" ></script>
 
       
-
 </body>
 </html>
