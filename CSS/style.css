@@ -1423,7 +1423,7 @@ nav {
     max-width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    overflow-x: hidden;    /* 🚫 Desplazamiento lateral dentro del contenido */
+    overflow-x: hidden;    /* SIN Desplazamiento lateral dentro del contenido */
   }
 
   .formulario__grupo {
@@ -1758,7 +1758,7 @@ min-width: 25px;
 
 /* ====================== FORMULARIOS CON METODOLOGIA  BEM ======================== */
 .formulario {
-  padding: 30px;
+  padding: 10px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1808,7 +1808,7 @@ min-width: 25px;
 .formulario__select {
   padding: 10px;
   width: 95%;
-  margin-top: 6px;
+  margin-top: 0px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
@@ -1824,7 +1824,7 @@ min-width: 25px;
 .formulario__botones {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 /*BOTONES DE GUARDAR Y VER EN LOS FORMULARIOS*/

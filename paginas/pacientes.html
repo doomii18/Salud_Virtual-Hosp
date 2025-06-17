@@ -24,7 +24,6 @@
   </li>
   <div class="menuLateral__group" data-group="PACIENTES">
     <li><a href="../paginas/pacientes.html"><i class="fas fa-user-injured menuLateral__icon"></i>Pacientes</a></li>
-    <li><a href="../paginas/registrarpacientes.html" class="active"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Paciente</a></li>
   </div>
 
   <!-- Grupo TUTORES -->
@@ -34,7 +33,6 @@
   </li>
   <div class="menuLateral__group" data-group="TUTORES">
     <li><a href="../paginas/tutores.html"><i class="fas fa-users menuLateral__icon"></i>Tutores</a></li>
-    <li><a href="../paginas/registrotutor.html"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Tutor</a></li>
   </div>
 
   <!-- Grupo CITAS MÉDICAS -->
@@ -114,18 +112,13 @@
 
         <div class="tabla__acciones">
           <input type="text" placeholder="Buscar paciente..." class="tabla__buscador" id="buscador-paciente">
-          <a href="../paginas/registrarpacientes.html" class="tabla__boton tabla__boton--agregar">
-            <img src="../IMG/add.png" alt="icono paciente" class="tabla__icono-boton">
-          </a>
+          <button id="btnNuevoPaciente" class="tabla__boton tabla__boton--agregar">
+          <img src="../IMG/add.png" alt="icono paciente" class="tabla__icono-boton">
+        </button>
           <button class="tabla__boton tabla__boton--buscar-paciente">
             <img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton">
           </button>
-          <button class="tabla__boton tabla__boton--editar-paciente">
-            <img src="../IMG/editar.png" alt="icono editar" class="tabla__icono-boton">
-          </button>
-          <button class="tabla__boton tabla__boton--eliminar-paciente">
-            <img src="../IMG/delete.png" alt="icono eliminar" class="tabla__icono-boton">
-          </button>
+
         </div>
 
         <div class="tabla__contenedor">
@@ -149,6 +142,69 @@
           </table>
         </div>
       </div>
+
+      <!-- MODAL FORMULARIO PACIENTE -->
+<div id="modal" class="modal" style="display: none;">
+  <div class="modal__contenido">
+    <span class="modal__cerrar cerrar">&times;</span>
+    <h2 class="modal__titulo">
+      <img src="../IMG/pediatric.png" alt="icono de paciente" class="formulario__icono">
+      Registrar Paciente
+    </h2>
+
+    <form id="form-paciente">
+      <div class="formulario__grid">
+        <!-- Columna izquierda -->
+        <div class="formulario__columna">
+          <label for="codigoPaciente" class="formulario__label">Código Paciente</label>
+          <input type="text" id="codigoPaciente" name="codigoPaciente" class="formulario__input" readonly>
+
+          <label for="1nombre-paciente" class="formulario__label">Primer Nombre</label>
+          <input type="text" id="1nombre-paciente" name="1nombre-paciente" class="formulario__input" required>
+
+          <label for="2nombre-paciente" class="formulario__label">Segundo Nombre</label>
+          <input type="text" id="2nombre-paciente" name="2nombre-paciente" class="formulario__input">
+
+          <label for="apellidos-paciente" class="formulario__label">Apellidos</label>
+          <input type="text" id="apellidos-paciente" name="apellidos-paciente" class="formulario__input" required>
+
+          <label for="alergias" class="formulario__label">Alergias</label>
+          <input type="text" id="alergias" name="alergias" class="formulario__input" placeholder="Si no tiene alergias, dejar vacío">
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="formulario__columna">
+          <label for="fecha" class="formulario__label">Fecha de Nacimiento</label>
+          <input type="date" id="fecha" name="fecha" class="formulario__input" required>
+
+          <label for="sexo" class="formulario__label">Sexo</label>
+          <select id="sexo" name="sexo" class="formulario__select" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+          </select>
+
+          <label for="edad" class="formulario__label">Edad del Paciente</label>
+          <input type="number" id="edad" name="edad" class="formulario__input" required min="0" max="20" step="1">
+
+          <label for="mesesanios" class="formulario__label">Edad en</label>
+          <select id="mesesanios" name="unidadEdad" class="formulario__select" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="meses">Meses</option>
+            <option value="anios">Años</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="formulario__botones">
+        <button type="submit" class="formulario__boton formulario__boton--guardar-paciente">Guardar registro</button>
+        <button type="button" class="formulario__boton formulario__boton--cancelar cerrar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
     </main>
 
     <!-- FOOTER -->
@@ -181,5 +237,7 @@
   </section>
 
   <script src="../JS/menu.js" defer></script>
+  <script src="../JS/PacienteAPIModel.js"></script>
+
 </body>
 </html>
