@@ -96,3 +96,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 })();
+
+//GRUPO DE OPCIONES DEL MENU LATERAL
+// Función para mostrar/ocultar grupos del menú
+  function toggleMenuGroup(divisor) {
+    const groupName = divisor.getAttribute('data-tex');
+    const group = document.querySelector(`.menuLateral__group[data-group="${groupName}"]`);
+    const icon = divisor.querySelector('.menuLateral__toggle-icon');
+    
+    // Toggle clase active
+    group.classList.toggle('active');
+    divisor.classList.toggle('active');
+    
+    // Rotar icono
+    icon.style.transform = group.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  // Opcional: Expandir grupos por defecto al cargar la página
+  document.addEventListener('DOMContentLoaded', function() {
+    // Puedes especificar qué grupos quieres expandidos por defecto
+    const defaultOpenGroups = ['PACIENTES', 'CITAS MÉDICAS'];
+    
+    defaultOpenGroups.forEach(groupName => {
+      const divisor = document.querySelector(`.menuLateral__divisor[data-tex="${groupName}"]`);
+      if (divisor) {
+        toggleMenuGroup(divisor);
+      }
+    });
+  });
+
+  //FIN DEL MENU LATERAL 
