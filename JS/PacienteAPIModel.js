@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
               <td class="tabla__dato">${persona.Birthdate || ''}</td>
               <td class="tabla__dato">${persona.Sexo}</td>
               <td class="tabla__dato">${persona.Age}</td>
-              <td class="tabla__dato">${paciente.AgeUnit}</td>
             `;
             cuerpoTabla.appendChild(fila);
           } catch (error) {

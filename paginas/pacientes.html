@@ -42,17 +42,17 @@
   </li>
   <div class="menuLateral__group" data-group="CITAS MÉDICAS">
     <li><a href="../paginas/citasmedicas.html"><i class="fas fa-calendar-alt menuLateral__icon"></i>Citas</a></li>
-    <li><a href="../paginas/agendarcitas.html"><i class="fas fa-calendar-plus menuLateral__icon"></i>Nueva Cita</a></li>
   </div>
 
   <!-- Grupo DOCTORES -->
-  <li class="menuLateral__divisor" data-tex="DOCTORES" onclick="toggleMenuGroup(this)">
-    <span class="menuLateral__divisor-text">Doctores</span>
+  <li class="menuLateral__divisor" data-tex="Area de Salud" onclick="toggleMenuGroup(this)">
+    <span class="menuLateral__divisor-text">Area de Salud</span>
     <i class="fas fa-chevron-down menuLateral__toggle-icon"></i>
   </li>
-  <div class="menuLateral__group" data-group="DOCTORES">
+  <div class="menuLateral__group" data-group="Area de Salud">
+    <li><a href="../paginas/Dependencia.html"><i class="fa-solid fa-hospital"></i> Dependencias</a></li>
+    <li><a href="../paginas/Cargo.html"><i class="fa-solid fa-hospital-user"></i> Cargos</a></li>
     <li><a href="../paginas/doctores.html"><i class="fas fa-user-md menuLateral__icon"></i>Doctores</a></li>
-    <li><a href="../paginas/registrardoctores.html"><i class="fas fa-plus-circle menuLateral__icon"></i>Nuevo Doctor</a></li>
   </div>
 
   <!-- Grupo HISTORIAL -->
@@ -62,7 +62,6 @@
   </li>
   <div class="menuLateral__group" data-group="HISTORIAL">
     <li><a href="../paginas/historialmedico.html"><i class="fas fa-notes-medical menuLateral__icon"></i>Historiales</a></li>
-    <li><a href="../paginas/agregarhistorial.html"><i class="fas fa-file-medical menuLateral__icon"></i>Nuevo Historial</a></li>
   </div>
 
   <!-- Grupo REPORTES -->
@@ -133,7 +132,6 @@
                 <th class="tabla__encabezado">Fecha Nacimiento</th>
                 <th class="tabla__encabezado">Sexo</th>
                 <th class="tabla__encabezado">Edad</th>
-                <th class="tabla__encabezado">Edad en</th>
               </tr>
             </thead>
             <tbody class="tabla__cuerpo">
@@ -187,12 +185,6 @@
           <label for="edad" class="formulario__label">Edad del Paciente</label>
           <input type="number" id="edad" name="edad" class="formulario__input" required min="0" max="20" step="1">
 
-          <label for="mesesanios" class="formulario__label">Edad en</label>
-          <select id="mesesanios" name="unidadEdad" class="formulario__select" required>
-            <option value="" disabled selected>Seleccione</option>
-            <option value="meses">Meses</option>
-            <option value="anios">Años</option>
-          </select>
         </div>
       </div>
 
