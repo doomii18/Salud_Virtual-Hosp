@@ -8,25 +8,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const apiHistorial = 'http://127.0.0.1:8000/api/MedicalHistory/';
   const apiPacientes = 'http://127.0.0.1:8000/api/Patients/';
+    const apiPersonas = 'http://127.0.0.1:8000/api/Person/';
 
-  // Cargar pacientes en el select
-  function cargarPacientesEnSelect() {
-    fetch(apiPacientes)
-      .then(res => res.json())
-      .then(data => {
-        const pacientes = data.Record;
-        selectPaciente.innerHTML = '<option value="">---------</option>';
+ // Cargar pacientes con nombres en el select
+  async function cargarPacientesEnSelect() {
+    try {
+      const resPacientes = await fetch(apiPacientes);
+      const dataPacientes = await resPacientes.json();
+      const pacientes = dataPacientes.Record;
 
-        pacientes.forEach(p => {
+      selectPaciente.innerHTML = '<option value="">---------</option>';
+
+      for (const paciente of pacientes) {
+        try {
+          const resPersona = await fetch(`${apiPersonas}${paciente.IdPerson}/`);
+          const personaData = await resPersona.json();
+          const persona = personaData.Record;
+
+          const nombreCompleto = `${persona.Firstname} ${persona.Middlename || ''} ${persona.Surnames}`;
           const option = document.createElement('option');
-          option.value = p.Id;
-          option.textContent = `${p.Code} (ID: ${p.Id})`;
+          option.value = paciente.Id;
+          option.textContent = `${nombreCompleto.trim()} - ${paciente.CodePatient}`; //carga del combobox ccon 
           selectPaciente.appendChild(option);
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar pacientes:', error);
-      });
+        } catch (error) {
+          console.error('Error al cargar persona de paciente:', error);
+        }
+      }
+    } catch (error) {
+      console.error('Error al cargar pacientes:', error);
+    }
   }
 
   // Cargar historial médico en la tabla
@@ -42,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
           fila.classList.add('tabla__fila');
 
           fila.innerHTML = `
-            <td class="tabla__celda">${historial.IdPatient}</td>
-            <td class="tabla__celda">${historial.Code}</td>
+            <td class="tabla__celda">${historial.IdPatients}</td>
+            <td class="tabla__celda">${historial.CodeMedicalHistory}</td>
             <td class="tabla__celda">${historial.Diagnosis}</td>
             <td class="tabla__celda">${historial.Treatment}</td>
-            <td class="tabla__celda">${historial.Prognosis}</td>
+            <td class="tabla__celda">${historial.Forecast}</td>
             <td class="tabla__celda">${historial.Date}</td>
-            <td class="tabla__celda">${historial.Weight}</td>
+            <td class="tabla__celda">${historial.WeightPounds}</td>
             <td class="tabla__celda">${historial.Measure}</td>
           `;
 

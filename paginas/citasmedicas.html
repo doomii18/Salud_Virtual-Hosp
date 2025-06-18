@@ -97,47 +97,102 @@
         <!-- CONTENIDO PRINCIPAL -->
 
     <!-- MAIN DE CITAS MÉDICAS -->
-    <main>
-      <div class="tabla">
-        <h1 class="tabla__titulo">
-          <img src="../IMG/Calendario.png" alt="icono citas" class="tabla__icono">
-          Citas Médicas Registradas
-        </h1>
+   <main>
+  <div class="tabla">
+    <h1 class="tabla__titulo">
+      <img src="../IMG/Calendario.png" alt="icono citas" class="tabla__icono">
+      Citas Médicas Registradas
+    </h1>
 
-        <div class="tabla__acciones">
-          <input type="text" placeholder="Buscar cita médica..." class="tabla__buscador" id="buscador-cita">
-          <a href="../paginas/agendarcitas.html" class="tabla__boton tabla__boton--agregar">
-            <img src="../IMG/add.png" alt="icono historial" class="tabla__icono-boton">
-          </a>
-          <button class="tabla__boton tabla__boton--buscar-citam"><img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton"></button>  
+    <div class="tabla__acciones">
+      <input type="text" placeholder="Buscar cita médica..." class="tabla__buscador" id="buscador-cita">
+      <button id="btnAbrirModalCita" class="tabla__boton tabla__boton--agregar">
+        <img src="../IMG/add.png" alt="icono historial" class="tabla__icono-boton">
+      </button>
+      <button class="tabla__boton tabla__boton--buscar-citam">
+        <img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton">
+      </button>  
+    </div>
+
+    <div class="tabla__contenedor">
+      <table class="tabla__estructura" id="tablaCitas">
+        <thead class="tabla__cabecera">
+          <tr class="tabla__fila-citam">
+            <th class="tabla__encabezado">Id de Cita</th>
+            <th class="tabla__encabezado">Id de Personal Medico</th>
+            <th class="tabla__encabezado">Cod. Cita</th>
+            <th class="tabla__encabezado">Paciente</th>
+            <th class="tabla__encabezado">Motivo</th>
+            <th class="tabla__encabezado">Estado</th>
+            <th class="tabla__encabezado">Fecha</th>
+            <th class="tabla__encabezado">Editar</th>
+            <th class="tabla__encabezado">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody class="tabla__cuerpo">
+          <!-- Datos se insertarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<!-- MODAL CITA MÉDICA -->
+<div id="modal" class="modal" style="display: none;">
+  <div class="modal__contenido">
+    <span class="modal__cerrar cerrar">&times;</span>
+    <h2 class="modal__titulo">
+      <img src="../IMG/Calendario.png" alt="Ícono de cita" class="formulario__icono">
+      Agendar Cita Médica
+    </h2>
+
+    <form id="form-cita">
+      <div class="formulario__grid">
+        <div class="formulario__columna">
+
+          <label for="personal-medico" class="formulario__label">Médico/Doctor</label>
+          <select id="personal-medico"  class="formulario__select" required>
+            <option value="">Cargando Doctores...</option>
+            <option value="Dra.">Dra. Alejandra Murillo</option>
+            <option value="Dr.">Dr. Carlos Duran</option>
+          </select>
+
+          
+          <label for="codigoCita" class="formulario__label">Código de Cita</label>
+          <input type="text" id="codigoCita" name="codigoCita" class="formulario__input" readonly style="background-color: #e0e0e0;">
+
+          <label for="idPacienteCita" class="formulario__label">Paciente</label>
+          <select id="idPacienteCita" name="idPacienteCita" class="formulario__select" required>
+            <option value="">Cargando pacientes...</option>
+          </select>
+             
+          <label for="razon" class="formulario__label">Razón/Motivo Cita</label>
+          <input type="text" id="razon" class="formulario__input" required>
+
         </div>
-
-        <div class="tabla__contenedor">
-          <table class="tabla__estructura" id="tablaCitas">
-            <thead class="tabla__cabecera">
-              <tr class="tabla__fila-citam">
-                <th class="tabla__encabezado">Código de Cita</th>
-                <th class="tabla__encabezado">Nombre Tutor</th>
-                <th class="tabla__encabezado">Apellidos Tutor</th>
-                <th class="tabla__encabezado">Nombre Paciente</th>
-                <th class="tabla__encabezado">Apellidos Paciente</th>
-                <th class="tabla__encabezado">Motivo</th>
-                <th class="tabla__encabezado">Fecha</th>
-                <th class="tabla__encabezado">Doctor</th>
-                <th class="tabla__encabezado">Estado</th>
-              </tr>
-            </thead>
-            <tbody class="tabla__cuerpo">
-              <!-- Datos se insertarán aquí dinámicamente -->
-            </tbody>
-          </table>
+               <div class="formulario__columna">
+          
+          <label for="estado" class="formulario__label">Estado de Cita</label>
+          <select id="estado" class="formulario__select" required>
+            <option value="">Seleccionar</option>
+            <option value="Cancelado">Cancelado</option>
+            <option value="Confirmado">Confirmado</option>
+          </select>
+   
+          <label for="fecha" class="formulario__label">Fecha de Cita</label>
+          <input type="date" id="fecha" class="formulario__input" required>
+          <label for="hora" class="formulario__label">Hora</label>
+          <input type="time" id="hora" class="formulario__input" required>
         </div>
       </div>
-    </main>
 
-    <script>
-  
-</script>
+      <div class="formulario__botones">
+        <button type="submit" class="formulario__boton formulario__boton--guardar-cita">Guardar registro</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
     <!-- FOOTER -->
     <footer class="footer-contacto">
@@ -168,6 +223,7 @@
   </section>
 
   <script src="../JS/menu.js" defer></script>
+  <script src="../JS/CitasMedicasAPIModel.js" ></script>
 
 </body>
 </html>
