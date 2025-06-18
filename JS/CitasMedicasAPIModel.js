@@ -97,8 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="tabla__celda">${cita.Reason}</td>
           <td class="tabla__celda">${cita.State}</td>
           <td class="tabla__celda">${cita.DateTime} ${cita.Time || ''}</td>
-          <td class="tabla__celda"><button class="btn-editar-cita" data-id="${cita.id}">✏️</button></td>
-          <td class="tabla__celda"><button class="btn-eliminar-cita" data-id="${cita.id}">🗑️</button></td>
+          <td class="tabla__celda"><button class="btn-editar" data-id="${cita.id}">Editar</button>
+      </td>
+          <td class="tabla__celda"><button class="btn-eliminar" data-id="${cita.id}">Eliminar</button>
+      </td>
         `;
         cuerpoTabla.appendChild(fila);
       }

@@ -42,26 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="tabla__dato">${dependencia.CodeDependency || dependencia.codigo}</td>
           <td class="tabla__dato">${dependencia.NameDependency || dependencia.nombre}</td>
           <td class="tabla__dato">
-            <button class="btn-edit" data-id="${dependencia.id || dependencia.id}">
-              <i class="bx bx-edit"></i>
-            </button>
-          </td>
+            <button class="btn-editar" data-id="${dependencia.id || dependencia.id}">Editar</button>
+      </td>
           <td class="tabla__dato">
-            <button class="btn-delete" data-id="${dependencia.id || dependencia.id}">
-              <i class="bx bx-trash"></i>
-            </button>
-          </td>
+            <button class="btn-eliminar" data-id="${dependencia.id || dependencia.id}">Eliminar</button>
+      </td>
         `;
         
         cuerpoTabla.appendChild(fila);
       });
       
       // Asignar eventos a los botones después de crearlos
-      document.querySelectorAll('.btn-edit').forEach(btn => {
+      document.querySelectorAll('.btn-editar').forEach(btn => {
         btn.addEventListener('click', editarDependencia);
       });
       
-      document.querySelectorAll('.btn-delete').forEach(btn => {
+      document.querySelectorAll('.btn-eliminar').forEach(btn => {
         btn.addEventListener('click', eliminarDependencia);
       });
       
