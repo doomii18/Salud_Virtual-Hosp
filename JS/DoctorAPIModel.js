@@ -11,53 +11,52 @@ document.addEventListener('DOMContentLoaded', function () {
   const apiCargo = 'http://127.0.0.1:8000/api/Charges/';
 
   // Cargar doctores a la tabla
-  async function cargarDoctores() {
-    try {
-      const resDoctores = await fetch(apiDoctores);
-      const data = await resDoctores.json();
-      const doctores = data.Record;
-      cuerpoTabla.innerHTML = '';
+  function cargarDoctores() {
+    fetch(apiDoctores)
+      .then(res => res.json())
+      .then(async data => {
+        const doctores = data.Record;
+        cuerpoTabla.innerHTML = '';
 
-      for (const doctor of doctores) {
-        try {
-          const resPersona = await fetch(`${apiPersonas}${doctor.IdPerson}/`);
-          const personaData = await resPersona.json();
-          const persona = personaData.Record;
+        for (const doctor of doctores) {
+          try {
+            const resPersona = await fetch(`${apiPersonas}${doctor.IdPerson_id}/`);
+            const personaData = await resPersona.json();
+            const persona = personaData.Record;
 
-          // Cargar dependencia
-          const resDependencia = await fetch(`${apiDependencia}${doctor.IdDependency}/`);
-          const dependenciaData = await resDependencia.json();
-          const dependencia = dependenciaData.Record;
+            const resDependencia = await fetch(`${apiDependencia}${doctor.IdDependency_id}/`);
+            const dependenciaData = await resDependencia.json();
+            const dependencia = dependenciaData.Record;
 
-          // Cargar cargo
-          const resCargo = await fetch(`${apiCargo}${doctor.IdCharges}/`);
-          const cargoData = await resCargo.json();
-          const cargo = cargoData.Record;
+            const resCargo = await fetch(`${apiCargo}${doctor.IdCharges_id}/`);
+            const cargoData = await resCargo.json();
+            const cargo = cargoData.Record;
 
-          const fila = document.createElement('tr');
-          fila.classList.add('tabla__fila-doctor');
-          fila.innerHTML = `
-            <td class="tabla__dato">${persona.IdentityCard}</td>
-            <td class="tabla__dato">${doctor.CodeMedicalStaff}</td>
-            <td class="tabla__dato">${persona.Firstname}</td>
-            <td class="tabla__dato">${persona.Middlename || ''}</td>
-            <td class="tabla__dato">${persona.Surnames}</td>
-            <td class="tabla__dato">${persona.Sexo}</td>
-            <td class="tabla__dato">${persona.Age}</td>
-            <td class="tabla__dato">${persona.Phone}</td>
-            <td class="tabla__dato">${persona.Email}</td>
-            <td class="tabla__dato">${persona.Address}</td>
-            <td class="tabla__dato">${dependencia.NameDependency || ''}</td>
-            <td class="tabla__dato">${cargo.NameCharges || ''}</td>
-          `;
-          cuerpoTabla.appendChild(fila);
-        } catch (error) {
-          console.error('Error al cargar datos del doctor:', error);
+            const fila = document.createElement('tr');
+            fila.classList.add('tabla__fila-doctor');
+            fila.innerHTML = `
+              <td class="tabla__dato">${persona.IdentityCard}</td>
+              <td class="tabla__dato">${doctor.CodeMedicalStaff}</td>
+              <td class="tabla__dato">${persona.Firstname}</td>
+              <td class="tabla__dato">${persona.Middlename || ''}</td>
+              <td class="tabla__dato">${persona.Surnames}</td>
+              <td class="tabla__dato">${persona.Sexo}</td>
+              <td class="tabla__dato">${persona.Age}</td>
+              <td class="tabla__dato">${persona.Phone}</td>
+              <td class="tabla__dato">${persona.Email}</td>
+              <td class="tabla__dato">${persona.Address}</td>
+              <td class="tabla__dato">${dependencia.NameDependency || ''}</td>
+              <td class="tabla__dato">${cargo.NameCharges || ''}</td>
+            `;
+            cuerpoTabla.appendChild(fila);
+          } catch (error) {
+            console.error('Error al cargar persona:', error);
+          }
         }
-      }
-    } catch (error) {
-      console.error('Error al cargar doctores:', error);
-    }
+      })
+      .catch(error => {
+        console.error('Error al cargar doctores:', error);
+      });
   }
 
   // Abrir modal

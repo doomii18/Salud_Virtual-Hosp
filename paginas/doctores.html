@@ -105,7 +105,7 @@
     <main>
       <div class="tabla">
         <h1 class="tabla__titulo">
-          <img src="../IMG/doctor.png" alt="icono doctores" class="tabla__icono">
+          <img src="../IMG/pediatric.png" alt="icono registrados" class="tabla__icono">
           Doctores Registrados
         </h1>
 
@@ -125,15 +125,15 @@
             <thead class="tabla__cabecera">
               <tr class="tabla__fila-doctor">
                 <th class="tabla__encabezado">Código</th>
-                <th class="tabla__encabezado">Cédula</th>
+                <th class="tabla__encabezado">Cedula</th>
                 <th class="tabla__encabezado">Primer Nombre</th>
                 <th class="tabla__encabezado">Segundo Nombre</th>
                 <th class="tabla__encabezado">Apellidos</th>
                 <th class="tabla__encabezado">Sexo</th>
                 <th class="tabla__encabezado">Edad</th>
-                <th class="tabla__encabezado">Teléfono</th>
+                <th class="tabla__encabezado">Telefono</th>
                 <th class="tabla__encabezado">Correo</th>
-                <th class="tabla__encabezado">Dirección</th>
+                <th class="tabla__encabezado">Direccion</th>
                 <th class="tabla__encabezado">Dependencia</th>
                 <th class="tabla__encabezado">Cargo</th>
               </tr>
@@ -158,11 +158,8 @@
       <div class="formulario__grid">
         <!-- Columna izquierda -->
         <div class="formulario__columna">
-          <label for="codigoDoctor" class="formulario__label">Código Doctor</label>
+          <label for="codigoDoctor" class="formulario__label">Código</label>
           <input type="text" id="codigoDoctor" name="codigoDoctor" class="formulario__input" readonly>
-
-          <label for="1nombre-doctor" class="formulario__label">Cedula</label>
-          <input type="text" id="cedula-doctor" name="cedula-doctor" class="formulario__input" required>
 
           <label for="1nombre-doctor" class="formulario__label">Primer Nombre</label>
           <input type="text" id="1nombre-doctor" name="1nombre-doctor" class="formulario__input" required>
@@ -186,7 +183,7 @@
         <div class="formulario__columna">
 
           <label for="edad" class="formulario__label">Edad</label>
-          <input type="number" id="edad" name="edad" class="formulario__input" required min="18" max="70" step="1">
+          <input type="number" id="edad" name="edad" class="formulario__input" required min="18" max="65" step="1">
 
           <label for="telefono" class="formulario__label">Teléfono</label>
           <input type="tel" id="telefono" name="telefono" class="formulario__input" required>
