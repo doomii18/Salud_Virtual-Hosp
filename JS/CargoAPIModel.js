@@ -42,26 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="tabla__dato">${cargo.CodeCharge || cargo.codigo}</td>
           <td class="tabla__dato">${cargo.NameCharges || cargo.nombre}</td>
           <td class="tabla__dato">
-            <button class="btn-edit" data-id="${cargo.id || cargo.id}">
-              <i class="bx bx-edit"></i>
-            </button>
-          </td>
+            <button class="btn-editar" data-id="${cargo.id || cargo.id}">Editar</button>
+      </td>
           <td class="tabla__dato">
-            <button class="btn-delete" data-id="${cargo.id || cargo.id}">
-              <i class="bx bx-trash"></i>
-            </button>
-          </td>
+            <button class="btn-eliminar" data-id="${cargo.id || cargo.id}"
+              >Eliminar</button>
+      </td>
         `;
         
         cuerpoTabla.appendChild(fila);
       });
       
       // Asignar eventos a los botones después de crearlos
-      document.querySelectorAll('.btn-edit').forEach(btn => {
+      document.querySelectorAll('.btn-editar').forEach(btn => {
         btn.addEventListener('click', editarCargo);
       });
       
-      document.querySelectorAll('.btn-delete').forEach(btn => {
+      document.querySelectorAll('.btn-eliminar').forEach(btn => {
         btn.addEventListener('click', eliminarCargo);
       });
       
