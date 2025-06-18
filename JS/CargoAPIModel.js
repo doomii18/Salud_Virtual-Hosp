@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="tabla__dato">${cargo.CodeCharge || cargo.codigo}</td>
           <td class="tabla__dato">${cargo.NameCharges || cargo.nombre}</td>
           <td class="tabla__dato">
-            <button class="btn-edit" data-id="${cargo.IdCharge || cargo.id}">
+            <button class="btn-edit" data-id="${cargo.id || cargo.id}">
               <i class="bx bx-edit"></i>
             </button>
           </td>
           <td class="tabla__dato">
-            <button class="btn-delete" data-id="${cargo.IdCharge || cargo.id}">
+            <button class="btn-delete" data-id="${cargo.id || cargo.id}">
               <i class="bx bx-trash"></i>
             </button>
           </td>
