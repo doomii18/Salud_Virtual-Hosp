@@ -103,7 +103,7 @@
     <main>
       <div class="tabla">
         <h1 class="tabla__titulo">
-          <img src="../IMG/pediatric.png" alt="icono registrados" class="tabla__icono">
+          <img src="../IMG/departamento.png" alt="icono registrados" class="tabla__icono">
           Dependencias Registrados
         </h1>
 
@@ -124,6 +124,8 @@
               <tr class="tabla__fila-dependencia">
                 <th class="tabla__encabezado">Código</th>
                 <th class="tabla__encabezado">Nombre Dependencia</th>
+                <th class="tabla__encabezado">Editar</th>
+                <th class="tabla__encabezado">Anular</th>
               </tr>
             </thead>
             <tbody class="tabla__cuerpo">
@@ -148,6 +150,12 @@
         <div class="formulario__columna">
           <label for="codigoDependencia" class="formulario__label">Código Dependencia</label>
           <input type="text" id="codigoDependencia" name="codigoDependencia" class="formulario__input" readonly>
+
+          <label for="estado" class="formulario__label">Estado</label>
+          <select id="estado" name="estado" class="formulario__select" required>
+            <option value="1">Activo</option>
+            <option value="0">Inectivo</option>
+          </select>
         </div>
 
         <!-- Columna derecha -->
