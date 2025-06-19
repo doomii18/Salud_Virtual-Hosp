@@ -189,10 +189,10 @@ new Chart(document.getElementById('Alergias'), {
     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo',],
     datasets: [{
       label: 'Resultados de los pacientes alergicos',
-      data: [70, 240, 180, 200, 40],
+      data: [2, 6, 4, 3, 2],
       backgroundColor: '#60a5fa',
       borderWidth: 1,
-      data: [40,230,180,200,50]
+      data: [2,6,4,3,2]
     }]
   }
 });
