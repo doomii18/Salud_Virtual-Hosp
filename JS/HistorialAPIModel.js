@@ -40,35 +40,42 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Cargar historial médico en la tabla
-  function cargarHistorial() {
-    fetch(apiHistorial)
-      .then(res => res.json())
-      .then(data => {
-        const historiales = data.Record;
-        cuerpoTabla.innerHTML = '';
+function cargarHistorial() {
+  fetch(apiHistorial)
+    .then(res => res.json())
+    .then(data => {
+      const historiales = data.Record;
+      cuerpoTabla.innerHTML = '';
 
-        historiales.forEach(historial => {
-          const fila = document.createElement('tr');
-          fila.classList.add('tabla__fila');
+      historiales.forEach(historial => {
+        const fila = document.createElement('tr');
+        fila.classList.add('tabla__fila');
 
-          fila.innerHTML = `
-            <td class="tabla__celda">${historial.IdPatients}</td>
-            <td class="tabla__celda">${historial.CodeMedicalHistory}</td>
-            <td class="tabla__celda">${historial.Diagnosis}</td>
-            <td class="tabla__celda">${historial.Treatment}</td>
-            <td class="tabla__celda">${historial.Forecast}</td>
-            <td class="tabla__celda">${historial.Date}</td>
-            <td class="tabla__celda">${historial.WeightPounds}</td>
-            <td class="tabla__celda">${historial.Measure}</td>
-          `;
+        fila.innerHTML = `
+          <td class="tabla__celda">${historial.IdPatients}</td>
+          <td class="tabla__celda">${historial.CodeMedicalHistory}</td>
+          <td class="tabla__celda">${historial.Diagnosis}</td>
+          <td class="tabla__celda">${historial.Treatment}</td>
+          <td class="tabla__celda">${historial.Forecast}</td>
+          <td class="tabla__celda">${historial.Date}</td>
+          <td class="tabla__celda">${historial.WeightPounds}</td>
+          <td class="tabla__celda">${historial.Measure}</td>
+          <td class="tabla__celda">
+            <button class="btn-editar" data-id="${historial.id}">Editar</button>
+          </td>
+          <td class="tabla__celda">
+            <button class="btn-eliminar" data-id="${historial.id}">Eliminar</button>
+          </td>
+        `;
 
-          cuerpoTabla.appendChild(fila);
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar historial médico:', error);
+        cuerpoTabla.appendChild(fila);
       });
-  }
+    })
+    .catch(error => {
+      console.error('Error al cargar historial médico:', error);
+    });
+}
+
 
   // Abrir modal
   btnAbrir.addEventListener('click', () => {
